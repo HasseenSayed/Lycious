@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lycious</title>
+    <meta name="description"
+        content="Lycious — A premium lychee drink, full and refreshing in taste. Made with real lychee puree. Pure attention to flavor.">
+    <meta name="keywords" content="Lycious, lychee, drink, premium, natural, fruit, refreshing">
+    <link rel="stylesheet" href="index.css">
+    <link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#home" class="nav-logo-stacked">
+                <object data="images/LogoSVG.svg" type="image/svg+xml" class="logo-svg logo-svg--nav">
+                    <img src="images/logo.png" class="logo-svg logo-svg--nav" />
+                </object>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" data-i18n="nav.home">Home</a>
+                <a href="#about" data-i18n="nav.about">About</a>
+                <a href="#product" data-i18n="nav.product">Product</a>
+                <a href="#values" data-i18n="nav.values">Our Values</a>
+                <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in Touch</a>
+            </div>
+            <div class="nav-right">
+                <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+                    <svg class="lang-globe" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                    <span class="lang-code" id="langCode">EN</span>
+                </button>
+                <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <img src="images/hero-bg.png" alt="Lychee background" id="heroBgImg">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge reveal" data-i18n="hero.badge">Website onder ontwikkeling</div>
+                <h1 class="hero-title reveal reveal-delay-1">
+                    <img src="images/Lycious.png" class="lycious-svg" />
+                </h1>
+                <p class="hero-subtitle reveal reveal-delay-2" data-i18n="hero.subtitle">Lychee, like you've rarely
+                    tasted.</p>
+                <p class="hero-tagline reveal reveal-delay-3" data-i18n="hero.tagline">
+                    We missed a drink that does justice to the real taste of lychee. So we made it ourselves. Subtly
+                    sweet. Fresh. Delicious.
+                </p>
+                <div class="hero-actions reveal reveal-delay-4">
+                    <a href="#product" class="btn btn-primary" data-i18n="hero.cta_primary">Discover Our Drink</a>
+                    <a href="#about" class="btn btn-secondary" data-i18n="hero.cta_secondary">Our Story</a>
+                </div>
+            </div>
+            <div class="hero-visual reveal reveal-delay-2">
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-glow"></div>
+                    <video autoplay muted loop playsinline poster="images/tafel.JPG">
+                        <source src="videos/LyciousGif.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            scroll
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-image reveal">
+                <img src="images/hoodie.JPG" alt="Fresh lychee fruits with water splash">
+            </div>
+            <div class="about-text">
+                <span class="section-label reveal" data-i18n="about.label">Our Story</span>
+                <h2 class="section-title reveal reveal-delay-1" data-i18n="about.title" data-i18n-html="true">
+                    Made with <em>Pure Attention</em>
+                </h2>
+                <p class="reveal reveal-delay-2" data-i18n="about.p1" data-i18n-html="true">
+                    At <strong>The Lycious Company</strong>, we believe that a great drink starts with a great fruit. We
+                    searched for a lychee drink that truly captured the natural, exotic sweetness of fresh lychee — and
+                    couldn't find one. So we decided to make it ourselves.
+                </p>
+                <p class="about-quote reveal reveal-delay-3" data-i18n="about.quote">
+                    "Made to pause for a moment. To treat yourself. Pure attention."
+                </p>
+                <p class="reveal reveal-delay-3" data-i18n="about.p2">
+                    Every bottle of Lycious is crafted with real lychee puree, carefully balanced to be subtly sweet,
+                    refreshingly crisp, and absolutely delicious. No artificial colors — just natural goodness in a
+                    beautiful 200ml glass bottle.
+                </p>
+                <div class="about-stats reveal reveal-delay-4">
+                    <div class="about-stat">
+                        <div class="about-stat-number">275ml</div>
+                        <div class="about-stat-label" data-i18n="about.stat1">Per Bottle</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="about-stat-number">5%</div>
+                        <div class="about-stat-label" data-i18n="about.stat2">Real Lychee Puree</div>
+                    </div>
+                    <div class="about-stat">
+                        <div class="about-stat-number">29</div>
+                        <div class="about-stat-label" data-i18n="about.stat3">kcal per 100ml</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRODUCT ===== -->
+    <section class="product" id="product">
+        <div class="container">
+            <div class="product-header">
+                <span class="section-label reveal" data-i18n="product.label">The Drink</span>
+                <h2 class="section-title reveal reveal-delay-1" data-i18n="product.title" data-i18n-html="true">
+                    <img src="images/Lycious.png" class="lycious-svg" /> Lychee Drink
+                </h2>
+                <p class="reveal reveal-delay-2" data-i18n="product.subtitle">Full & refreshing in taste — a premium
+                    lychee drink like no other.</p>
+            </div>
+
+            <div class="product-showcase">
+                <div class="product-image-card reveal">
+                    <img src="images/tafel.JPG" alt="Lycious Lychee Drink">
+                </div>
+
+                <div class="product-details">
+                    <h3 class="reveal" data-i18n="product.name">Lychee Drink</h3>
+                    <p class="reveal reveal-delay-1" data-i18n="product.desc">
+                        Crafted with real lychee puree and natural lychee coloring from beet and carrot concentrates. A
+                        refreshing experience in every sip.
+                    </p>
+
+                    <div class="product-features">
+                        <div class="product-feature reveal reveal-delay-1">
+                            <div class="product-feature-icon">🍈</div>
+                            <div>
+                                <h4 data-i18n="product.feat1_title">Real Lychee</h4>
+                                <p data-i18n="product.feat1_desc">Made with 5% lychee puree</p>
+                            </div>
+                        </div>
+                        <div class="product-feature reveal reveal-delay-2">
+                            <div class="product-feature-icon">🌿</div>
+                            <div>
+                                <h4 data-i18n="product.feat2_title">Natural Aroma</h4>
+                                <p data-i18n="product.feat2_desc">Natural flavoring only</p>
+                            </div>
+                        </div>
+                        <div class="product-feature reveal reveal-delay-3">
+                            <div class="product-feature-icon">✨</div>
+                            <div>
+                                <h4 data-i18n="product.feat3_title">Low Calorie</h4>
+                                <p data-i18n="product.feat3_desc">Only 29 kcal per 100ml</p>
+                            </div>
+                        </div>
+                        <div class="product-feature reveal reveal-delay-4">
+                            <div class="product-feature-icon">♻️</div>
+                            <div>
+                                <h4 data-i18n="product.feat4_title">Glass Bottle</h4>
+                                <p data-i18n="product.feat4_desc">100% recyclable packaging</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nutrition-card reveal">
+                        <h4 data-i18n="product.nutrition_title">Nutritional Values — per 100 ml</h4>
+                        <div class="nutrition-row">
+                            <span data-i18n="product.energy">Energy</span>
+                            <span>123 kJ / 29 kcal</span>
+                        </div>
+                        <div class="nutrition-row">
+                            <span data-i18n="product.fats">Fats</span>
+                            <span>0 g</span>
+                        </div>
+                        <div class="nutrition-row">
+                            <span data-i18n="product.carbs">Carbohydrates</span>
+                            <span>6.9 g</span>
+                        </div>
+                        <div class="nutrition-row">
+                            <span data-i18n="product.sugars">— of which sugars</span>
+                            <span>6.8 g</span>
+                        </div>
+                        <div class="nutrition-row">
+                            <span data-i18n="product.salt">Salt</span>
+                            <span>0.05 g</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== VALUES ===== -->
+    <section class="values" id="values">
+        <div class="container">
+            <div class="values-header">
+                <span class="section-label reveal" data-i18n="values.label">Why Lycious</span>
+                <h2 class="section-title reveal reveal-delay-1" data-i18n="values.title" data-i18n-html="true">
+                    Our <em>Values</em>
+                </h2>
+                <p class="reveal reveal-delay-2" data-i18n="values.subtitle">Every detail matters when crafting the
+                    perfect lychee drink.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card reveal">
+                    <div class="value-icon">🎯</div>
+                    <h3 data-i18n="values.card1_title">Authentic Taste</h3>
+                    <p data-i18n="values.card1_desc">We use real lychee puree to deliver the genuine, exotic sweetness you deserve, not artificial imitations.</p>
+                </div>
+                <div class="value-card reveal reveal-delay-2">
+                    <div class="value-icon">💎</div>
+                    <h3 data-i18n="values.card2_title">Premium Quality</h3>
+                    <p data-i18n="values.card2_desc">From the recipe to the glass bottle to the label, every element is crafted with care and attention to detail.</p>
+                </div>
+                <div class="value-card reveal reveal-delay-3">
+                    <div class="value-icon">📍</div>
+                    <h3 data-i18n="values.card3_title">Locally Produced</h3>
+                    <p data-i18n="values.card3_desc">Locally produced in Heemskerk, by 2 young entrepeneurs with passion for lychee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta" id="contact">
+        <div class="container">
+            <div class="cta-card reveal">
+                <h2 data-i18n="cta.title">Try Lycious Today</h2>
+                <p data-i18n="cta.desc">Experience the refreshing taste of premium lychee. Subtly sweet, delightfully
+                    fresh, absolutely delicious.</p>
+                <a href="mailto:info@lycious.nl" class="btn btn-white" data-i18n="cta.button">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#home" class="nav-logo-stacked">
+                        <object data="images/LogoSVG.svg" type="image/svg+xml" class="logo-svg logo-svg--footer">
+                            <img src="images/logo.png" class="logo-svg logo-svg--footer" />
+                        </object>
+                    </a>
+                    <p data-i18n="footer.brand_desc">Premium lychee drink — full and refreshing in taste. Made with real
+                        lychee puree and natural ingredients.</p>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.links_title">Quick Links</h4>
+                    <div class="footer-links">
+                        <a href="#home" data-i18n="nav.home">Home</a>
+                        <a href="#about" data-i18n="nav.about">About</a>
+                        <a href="#product" data-i18n="nav.product">Product</a>
+                        <a href="#values" data-i18n="nav.values">Our Values</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.contact_title">Contact</h4>
+                    <div class="footer-contact">
+                        <p>📍 Meerzicht B.V.</p>
+                        <p>Stroomwal 40</p>
+                        <p>1967 JK Heemskerk</p>
+                        <p style="margin-top: 8px;">📧 info@lycious.nl</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 data-i18n="footer.ingredients_title">About the Drink</h4>
+                    <p style="font-size: 0.85rem; line-height: 1.8;" data-i18n="footer.ingredients">
+                        Ingredients: water, sugar, lychee puree (5%), food acid (citric acid), stabilizer (xanthan gum),
+                        sweeteners (erythritol, acesulfame-K), coloring concentrate (beet, carrot), salt, natural aroma.
+                    </p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 The Lycious Company · Meerzicht B.V. · All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
