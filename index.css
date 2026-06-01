@@ -212,9 +212,8 @@ ul {
 
 .logo-svg--footer {
     height: 70px;
-    width: auto;
-    margin-bottom: 20px;
-    display: flex;
+    width: 126px;
+    display: block;
     filter: brightness(0) invert(1);
 }
 
@@ -470,6 +469,7 @@ ul {
     display: flex;
     gap: var(--space-sm);
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .btn {
@@ -944,6 +944,193 @@ ul {
 }
 
 /* ==========================================
+   ORDER SECTION
+   ========================================== */
+.order {
+    padding: var(--space-2xl) 0;
+    background:
+        linear-gradient(135deg, rgba(111, 27, 35, 0.92) 0%, rgba(74, 15, 24, 0.96) 100%),
+        url('images/sparkly-bg.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.order .container {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: var(--space-xl);
+    align-items: start;
+}
+
+.order-intro>p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.78);
+    font-weight: 300;
+    line-height: 1.9;
+    max-width: 480px;
+}
+
+.order .section-label,
+.order .section-title,
+.order .section-title em {
+    color: white;
+}
+
+.order-steps {
+    display: grid;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+}
+
+.order-step {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+}
+
+.order-step span {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: white;
+    color: var(--brand-dark-red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.order-step p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.order-card {
+    background: var(--warm-white);
+    border: 1px solid var(--pink-100);
+    border-radius: 28px;
+    box-shadow: var(--shadow-lg);
+    padding: var(--space-md);
+}
+
+.order-form {
+    display: grid;
+    gap: var(--space-sm);
+}
+
+.order-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-sm);
+}
+
+.order-form label {
+    display: grid;
+    gap: 6px;
+    color: var(--pink-800);
+    font-size: 0.88rem;
+    font-weight: 600;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+    width: 100%;
+    border: 1px solid var(--cream-dark);
+    border-radius: 14px;
+    background: white;
+    color: var(--pink-900);
+    font: inherit;
+    font-size: 0.95rem;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.order-form textarea {
+    resize: vertical;
+    min-height: 86px;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+    border-color: var(--brand-dark-red);
+    box-shadow: 0 0 0 3px rgba(111, 27, 35, 0.1);
+}
+
+.order-remember {
+    display: flex !important;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 10px !important;
+    font-weight: 400 !important;
+}
+
+.order-remember input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--brand-dark-red);
+}
+
+.order-summary {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-sm);
+    padding: var(--space-sm);
+    background: var(--pink-50);
+    border: 1px solid var(--pink-100);
+    border-radius: 18px;
+}
+
+.order-summary span {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--wood-brown);
+    margin-bottom: 2px;
+}
+
+.order-summary strong {
+    color: var(--brand-dark-red);
+    font-size: 1.1rem;
+}
+
+.order-summary p {
+    color: var(--pink-700);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    max-width: 260px;
+}
+
+.order-submit {
+    justify-content: center;
+}
+
+.order-status {
+    min-height: 24px;
+    color: var(--brand-dark-red);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.order-status.error {
+    color: #a21d2d;
+}
+
+.order-status.success {
+    color: #2f6b45;
+}
+
+/* ==========================================
    CTA SECTION
    ========================================== */
 .cta {
@@ -1028,20 +1215,23 @@ ul {
     margin-bottom: var(--space-lg);
 }
 
-.footer-brand .nav-logo {
-    color: white;
-    margin-bottom: var(--space-sm);
-    display: inline-block;
+.footer-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
 }
 
-.footer-brand .nav-logo span {
-    color: var(--pink-400);
+.footer-brand .nav-logo-stacked {
+    width: 100%;
+    margin-bottom: var(--space-sm);
+    align-items: center;
 }
 
 .footer-brand p {
     font-size: 0.9rem;
     line-height: 1.8;
-    max-width: 300px;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -1143,6 +1333,11 @@ ul {
         grid-template-columns: 1fr;
     }
 
+    .order .container {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: var(--space-md);
@@ -1186,6 +1381,14 @@ ul {
 
     .product-features {
         grid-template-columns: 1fr;
+    }
+
+    .order-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .order-summary {
+        flex-direction: column;
     }
 
     .about-stats {

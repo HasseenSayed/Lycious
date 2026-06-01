@@ -2,6 +2,13 @@
    LYCIOUS — Interactive Scripts + i18n
    ========================================== */
 
+// Add your hosted payment URL or order API endpoint here when ready.
+const orderConfig = {
+  backendEndpoint: '',
+  paymentUrl: '',
+  notificationEmail: 'info@lycious.nl'
+};
+
 // --- i18n Translation Dictionary ---
 const translations = {
   en: {
@@ -14,6 +21,7 @@ const translations = {
     'nav.about': 'About',
     'nav.product': 'Product',
     'nav.values': 'Our Values',
+    'nav.order': 'Order',
     'nav.cta': 'Get in Touch',
 
     // Hero
@@ -21,6 +29,7 @@ const translations = {
     'hero.subtitle': "Lychee, like you've rarely tasted.",
     'hero.tagline': 'We missed a drink that does justice to the real taste of lychee. So we made it ourselves. Subtly sweet. Fresh. Delicious.',
     'hero.cta_primary': 'Discover Our Drink',
+    'hero.cta_order': 'Order Now',
     'hero.cta_secondary': 'Our Story',
 
     // About
@@ -65,6 +74,37 @@ const translations = {
     'values.card3_title': 'Locally Produced',
     'values.card3_desc': 'Locally produced in Heemskerk, by 2 young entrepeneurs with passion for lychee.',
 
+    // Order
+    'order.label': 'Order',
+    'order.title': 'Place a <em>Lycious</em> Order',
+    'order.subtitle': 'Send us your details and preferred quantity. We will confirm availability, delivery, and payment.',
+    'order.step1': 'Choose a quantity',
+    'order.step2': 'Leave your details',
+    'order.step3': 'Receive confirmation',
+    'order.name': 'Name',
+    'order.email': 'Email',
+    'order.phone': 'Phone',
+    'order.quantity': 'Bottles',
+    'order.delivery': 'Delivery preference',
+    'order.delivery_option': 'Delivery',
+    'order.pickup_option': 'Pickup in Heemskerk',
+    'order.payment': 'Payment preference',
+    'order.invoice_option': 'Invoice / payment link',
+    'order.online_option': 'Online checkout when available',
+    'order.address': 'Delivery address',
+    'order.notes': 'Notes',
+    'order.remember': 'Remember my details on this device',
+    'order.summary_label': 'Order request',
+    'order.summary_note': 'No payment is taken until your order is confirmed.',
+    'order.submit': 'Place Order',
+    'order.bottle_single': 'bottle',
+    'order.bottle_plural': 'bottles',
+    'order.sending': 'Sending your order...',
+    'order.email_fallback': 'Your email app is opening with the order details.',
+    'order.success': 'Thank you. Your order request has been sent.',
+    'order.error': 'We could not send the order automatically. Please try again or email info@lycious.nl.',
+    'order.payment_redirect': 'Order received. Redirecting to checkout...',
+
     // CTA
     'cta.title': 'Try Lycious Today',
     'cta.desc': 'Experience the refreshing taste of premium lychee. Subtly sweet, delightfully fresh, absolutely delicious.',
@@ -88,13 +128,15 @@ const translations = {
     'nav.about': 'Over Ons',
     'nav.product': 'Product',
     'nav.values': 'Onze Waarden',
+    'nav.order': 'Bestellen',
     'nav.cta': 'Neem Contact Op',
 
     // Hero
-    'hero.badge': 'Website onder onwikkeling',
+    'hero.badge': 'Website onder ontwikkeling',
     'hero.subtitle': 'Lychee, zoals je \'m zelden proeft.',
     'hero.tagline': 'We misten een drankje dat recht doet aan de echte smaak van lychee. Dus maakten we het zelf. Subtiel zoet. Fris. Heerlijk.',
     'hero.cta_primary': 'Ontdek Ons Drankje',
+    'hero.cta_order': 'Bestel Nu',
     'hero.cta_secondary': 'Ons Verhaal',
 
     // About
@@ -139,6 +181,37 @@ const translations = {
     'values.card3_title': 'Lokaal Geproduceerd',
     'values.card3_desc': 'Lokaal geproduceerd in Heemskerk, door 2 jonge ondernemers met passie voor lychee.',
 
+    // Order
+    'order.label': 'Bestellen',
+    'order.title': 'Plaats een <em>Lycious</em> bestelling',
+    'order.subtitle': 'Stuur je gegevens en gewenste aantal door. Wij bevestigen beschikbaarheid, levering en betaling.',
+    'order.step1': 'Kies een aantal',
+    'order.step2': 'Laat je gegevens achter',
+    'order.step3': 'Ontvang bevestiging',
+    'order.name': 'Naam',
+    'order.email': 'E-mail',
+    'order.phone': 'Telefoon',
+    'order.quantity': 'Flesjes',
+    'order.delivery': 'Leveringsvoorkeur',
+    'order.delivery_option': 'Bezorgen',
+    'order.pickup_option': 'Afhalen in Heemskerk',
+    'order.payment': 'Betaalvoorkeur',
+    'order.invoice_option': 'Factuur / betaallink',
+    'order.online_option': 'Online checkout zodra beschikbaar',
+    'order.address': 'Bezorgadres',
+    'order.notes': 'Opmerkingen',
+    'order.remember': 'Onthoud mijn gegevens op dit apparaat',
+    'order.summary_label': 'Bestelaanvraag',
+    'order.summary_note': 'Er wordt pas betaald nadat je bestelling is bevestigd.',
+    'order.submit': 'Plaats Bestelling',
+    'order.bottle_single': 'flesje',
+    'order.bottle_plural': 'flesjes',
+    'order.sending': 'Je bestelling wordt verzonden...',
+    'order.email_fallback': 'Je e-mailapp wordt geopend met de bestelgegevens.',
+    'order.success': 'Bedankt. Je bestelaanvraag is verzonden.',
+    'order.error': 'We konden de bestelling niet automatisch verzenden. Probeer opnieuw of mail naar info@lycious.nl.',
+    'order.payment_redirect': 'Bestelling ontvangen. Je wordt doorgestuurd naar checkout...',
+
     // CTA
     'cta.title': 'Probeer Lycious Vandaag',
     'cta.desc': 'Ervaar de verfrissende smaak van premium lychee. Subtiel zoet, heerlijk fris, absoluut lekker.',
@@ -161,6 +234,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const langToggle = document.getElementById('langToggle');
   const langCode = document.getElementById('langCode');
+
+  function getTranslation(key) {
+    return translations[currentLang]?.[key] || translations.en[key] || key;
+  }
+
+  function updateOrderSummary() {
+    const quantityInput = document.getElementById('orderQuantity');
+    const orderSummary = document.getElementById('orderSummary');
+    if (!quantityInput || !orderSummary) return;
+
+    const quantity = Math.max(parseInt(quantityInput.value, 10) || 1, 1);
+    const bottleKey = quantity === 1 ? 'order.bottle_single' : 'order.bottle_plural';
+    orderSummary.textContent = `${quantity} ${getTranslation(bottleKey)}`;
+  }
 
   function setLanguage(lang) {
     currentLang = lang;
@@ -193,6 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
   langToggle.addEventListener('click', () => {
     const newLang = currentLang === 'en' ? 'nl' : 'en';
     setLanguage(newLang);
+    updateOrderSummary();
 
     // Subtle animation feedback
     langToggle.style.transform = 'scale(0.9)';
@@ -327,5 +415,122 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.5 });
 
   statNumbers.forEach(el => statsObserver.observe(el));
+
+  // --- Order Form ---
+  const orderForm = document.getElementById('orderForm');
+  const orderStatus = document.getElementById('orderStatus');
+  let savedOrderDetails = {};
+
+  try {
+    savedOrderDetails = JSON.parse(localStorage.getItem('lycious-order-details') || '{}');
+  } catch {
+    localStorage.removeItem('lycious-order-details');
+  }
+
+  if (orderForm) {
+    ['name', 'email', 'phone', 'address'].forEach(field => {
+      const input = orderForm.elements[field];
+      if (input && savedOrderDetails[field]) {
+        input.value = savedOrderDetails[field];
+      }
+    });
+
+    const quantityInput = document.getElementById('orderQuantity');
+    quantityInput.addEventListener('input', updateOrderSummary);
+    updateOrderSummary();
+
+    orderForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      if (!orderForm.checkValidity()) {
+        orderForm.reportValidity();
+        return;
+      }
+
+      const formData = new FormData(orderForm);
+      const order = {
+        name: formData.get('name').trim(),
+        email: formData.get('email').trim(),
+        phone: formData.get('phone').trim(),
+        quantity: Number(formData.get('quantity')),
+        delivery: formData.get('delivery'),
+        payment: formData.get('payment'),
+        address: formData.get('address').trim(),
+        notes: formData.get('notes').trim(),
+        source: 'lycious.nl',
+        createdAt: new Date().toISOString()
+      };
+
+      orderStatus.className = 'order-status';
+      orderStatus.textContent = getTranslation('order.sending');
+
+      if (formData.get('remember')) {
+        localStorage.setItem('lycious-order-details', JSON.stringify({
+          name: order.name,
+          email: order.email,
+          phone: order.phone,
+          address: order.address
+        }));
+      } else {
+        localStorage.removeItem('lycious-order-details');
+      }
+
+      try {
+        if (orderConfig.backendEndpoint) {
+          const response = await fetch(orderConfig.backendEndpoint, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(order)
+          });
+
+          if (!response.ok) {
+            throw new Error(`Order endpoint returned ${response.status}`);
+          }
+
+          if (order.payment === 'online' && orderConfig.paymentUrl) {
+            orderStatus.textContent = getTranslation('order.payment_redirect');
+            window.location.href = orderConfig.paymentUrl;
+            return;
+          }
+
+          orderStatus.classList.add('success');
+          orderStatus.textContent = getTranslation('order.success');
+          orderForm.reset();
+          updateOrderSummary();
+          return;
+        }
+
+        if (order.payment === 'online' && orderConfig.paymentUrl) {
+          localStorage.setItem('lycious-pending-order', JSON.stringify(order));
+          orderStatus.textContent = getTranslation('order.payment_redirect');
+          window.location.href = orderConfig.paymentUrl;
+          return;
+        }
+
+        const emailBody = [
+          'New Lycious order request',
+          '',
+          `Name: ${order.name}`,
+          `Email: ${order.email}`,
+          `Phone: ${order.phone || '-'}`,
+          `Quantity: ${order.quantity}`,
+          `Delivery: ${order.delivery}`,
+          `Payment: ${order.payment}`,
+          `Address: ${order.address || '-'}`,
+          `Notes: ${order.notes || '-'}`,
+          `Created: ${order.createdAt}`
+        ].join('\n');
+
+        const mailtoUrl = `mailto:${orderConfig.notificationEmail}?subject=${encodeURIComponent('New Lycious order request')}&body=${encodeURIComponent(emailBody)}`;
+        window.location.href = mailtoUrl;
+        orderStatus.classList.add('success');
+        orderStatus.textContent = getTranslation('order.email_fallback');
+      } catch (error) {
+        console.error(error);
+        orderStatus.classList.add('error');
+        orderStatus.textContent = getTranslation('order.error');
+      }
+    });
+  }
 
 });
