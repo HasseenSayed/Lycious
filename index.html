@@ -27,6 +27,7 @@
                 <a href="#about" data-i18n="nav.about">About</a>
                 <a href="#product" data-i18n="nav.product">Product</a>
                 <a href="#values" data-i18n="nav.values">Our Values</a>
+                <a href="#order" data-i18n="nav.order">Order</a>
                 <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in Touch</a>
             </div>
             <div class="nav-right">
@@ -67,6 +68,7 @@
                 </p>
                 <div class="hero-actions reveal reveal-delay-4">
                     <a href="#product" class="btn btn-primary" data-i18n="hero.cta_primary">Discover Our Drink</a>
+                    <a href="#order" class="btn btn-secondary" data-i18n="hero.cta_order">Order Now</a>
                     <a href="#about" class="btn btn-secondary" data-i18n="hero.cta_secondary">Our Story</a>
                 </div>
             </div>
@@ -241,6 +243,100 @@
         </div>
     </section>
 
+    <!-- ===== ORDER ===== -->
+    <section class="order" id="order">
+        <div class="container">
+            <div class="order-intro">
+                <span class="section-label reveal" data-i18n="order.label">Order</span>
+                <h2 class="section-title reveal reveal-delay-1" data-i18n="order.title" data-i18n-html="true">
+                    Place a <em>Lycious</em> Order
+                </h2>
+                <p class="reveal reveal-delay-2" data-i18n="order.subtitle">
+                    Send us your details and preferred quantity. We will confirm availability, delivery, and payment.
+                </p>
+                <div class="order-steps reveal reveal-delay-3">
+                    <div class="order-step">
+                        <span>1</span>
+                        <p data-i18n="order.step1">Choose a quantity</p>
+                    </div>
+                    <div class="order-step">
+                        <span>2</span>
+                        <p data-i18n="order.step2">Leave your details</p>
+                    </div>
+                    <div class="order-step">
+                        <span>3</span>
+                        <p data-i18n="order.step3">Receive confirmation</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-card reveal reveal-delay-2">
+                <form class="order-form" id="orderForm">
+                    <div class="order-form-grid">
+                        <label>
+                            <span data-i18n="order.name">Name</span>
+                            <input type="text" name="name" id="orderName" autocomplete="name" required>
+                        </label>
+                        <label>
+                            <span data-i18n="order.email">Email</span>
+                            <input type="email" name="email" id="orderEmail" autocomplete="email" required>
+                        </label>
+                        <label>
+                            <span data-i18n="order.phone">Phone</span>
+                            <input type="tel" name="phone" id="orderPhone" autocomplete="tel">
+                        </label>
+                        <label>
+                            <span data-i18n="order.quantity">Bottles</span>
+                            <input type="number" name="quantity" id="orderQuantity" min="1" step="1" value="12" required>
+                        </label>
+                        <label>
+                            <span data-i18n="order.delivery">Delivery preference</span>
+                            <select name="delivery" id="orderDelivery" required>
+                                <option value="delivery" data-i18n="order.delivery_option">Delivery</option>
+                                <option value="pickup" data-i18n="order.pickup_option">Pickup in Heemskerk</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span data-i18n="order.payment">Payment preference</span>
+                            <select name="payment" id="orderPayment" required>
+                                <option value="invoice" data-i18n="order.invoice_option">Invoice / payment link</option>
+                                <option value="online" data-i18n="order.online_option">Online checkout when available</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <label>
+                        <span data-i18n="order.address">Delivery address</span>
+                        <textarea name="address" id="orderAddress" rows="3" autocomplete="street-address"></textarea>
+                    </label>
+
+                    <label>
+                        <span data-i18n="order.notes">Notes</span>
+                        <textarea name="notes" id="orderNotes" rows="3"></textarea>
+                    </label>
+
+                    <label class="order-remember">
+                        <input type="checkbox" name="remember" id="orderRemember">
+                        <span data-i18n="order.remember">Remember my details on this device</span>
+                    </label>
+
+                    <div class="order-summary">
+                        <div>
+                            <span data-i18n="order.summary_label">Order request</span>
+                            <strong id="orderSummary">12 bottles</strong>
+                        </div>
+                        <p data-i18n="order.summary_note">No payment is taken until your order is confirmed.</p>
+                    </div>
+
+                    <button class="btn btn-primary order-submit" type="submit" data-i18n="order.submit">
+                        Place Order
+                    </button>
+                    <p class="order-status" id="orderStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- ===== CTA ===== -->
     <section class="cta" id="contact">
         <div class="container">
@@ -273,6 +369,7 @@
                         <a href="#about" data-i18n="nav.about">About</a>
                         <a href="#product" data-i18n="nav.product">Product</a>
                         <a href="#values" data-i18n="nav.values">Our Values</a>
+                        <a href="#order" data-i18n="nav.order">Order</a>
                     </div>
                 </div>
                 <div>
