@@ -37,7 +37,7 @@ const translations = {
     'about.title': 'Made with <em>Pure Attention</em>',
     'about.p1': 'At <strong>The Lycious Company</strong>, we believe that a great drink starts with a great fruit. We searched for a lychee drink that truly captured the natural, exotic sweetness of fresh lychee — and couldn\'t find one. So we decided to make it ourselves.',
     'about.quote': '"Made to pause for a moment. To treat yourself. Pure attention."',
-    'about.p2': 'Every bottle of Lycious is crafted with real lychee puree, carefully balanced to be subtly sweet, refreshingly crisp, and absolutely delicious. No artificial colors — just natural goodness in a beautiful 200ml glass bottle.',
+    'about.p2': 'Every bottle of Lycious is crafted with real lychee puree, carefully balanced to be subtly sweet, refreshingly crisp, and absolutely delicious. No artificial colors — just natural goodness in a beautiful 275ml glass bottle.',
     'about.stat1': 'Per Bottle',
     'about.stat2': 'Real Lychee Puree',
     'about.stat3': 'kcal per 100ml',
@@ -72,7 +72,7 @@ const translations = {
     'values.card2_title': 'Premium Quality',
     'values.card2_desc': 'From the recipe to the glass bottle to the label, every element is crafted with care and attention to detail.',
     'values.card3_title': 'Locally Produced',
-    'values.card3_desc': 'Locally produced in Heemskerk, by 2 young entrepeneurs with passion for lychee.',
+    'values.card3_desc': 'Locally produced in Heemskerk, by two young entrepreneurs with passion for lychee.',
 
     // Order
     'order.label': 'Order',
@@ -144,7 +144,7 @@ const translations = {
     'about.title': 'Gemaakt met <em>Pure Aandacht</em>',
     'about.p1': 'Bij <strong>The Lycious Company</strong> geloven we dat een goed drankje begint met goed fruit. We zochten naar een Lychee Drink dat écht recht doet aan de natuurlijke, exotische zoetheid van verse lychee — en konden het niet vinden. Dus besloten we het zelf te maken.',
     'about.quote': '"Gemaakt om even stil te staan. Om jezelf te verwennen. Pure aandacht."',
-    'about.p2': 'Elke fles Lycious is gemaakt met echte lychee puree, zorgvuldig gebalanceerd om subtiel zoet, verfrissend helder en absoluut heerlijk te zijn. Geen kunstmatige kleurstoffen — alleen natuurlijke goedheid in een prachtig 200ml glazen flesje.',
+    'about.p2': 'Elke fles Lycious is gemaakt met echte lychee puree, zorgvuldig gebalanceerd om subtiel zoet, verfrissend helder en absoluut heerlijk te zijn. Geen kunstmatige kleurstoffen — alleen natuurlijke goedheid in een prachtig 275ml glazen flesje.',
     'about.stat1': 'Per Flesje',
     'about.stat2': 'Echte Lychee Puree',
     'about.stat3': 'kcal per 100ml',
@@ -179,7 +179,7 @@ const translations = {
     'values.card2_title': 'Premium Kwaliteit',
     'values.card2_desc': 'Van het recept tot het glazen flesje tot het etiket, elk element is met zorg en aandacht voor detail gemaakt.',
     'values.card3_title': 'Lokaal Geproduceerd',
-    'values.card3_desc': 'Lokaal geproduceerd in Heemskerk, door 2 jonge ondernemers met passie voor lychee.',
+    'values.card3_desc': 'Lokaal geproduceerd in Heemskerk, door twee jonge ondernemers met passie voor lychee.',
 
     // Order
     'order.label': 'Bestellen',
@@ -222,7 +222,7 @@ const translations = {
     'footer.links_title': 'Snelle Links',
     'footer.contact_title': 'Contact',
     'footer.ingredients_title': 'Over het Drankje',
-    'footer.ingredients': 'Ingrediënten: water, suiker, lychee puree (5%), voedingszuur (citroenzuur), stabilisator (xanthaan gom), zoetstoffen (erythritol, acesulfame-K), kleurend concentraat (kool, wortel), zout, natuurlijk aroma.',
+    'footer.ingredients': 'Ingrediënten: water, suiker, lychee puree (5%), voedingszuur (citroenzuur), stabilisator (xanthaan gom), zoetstoffen (erythritol, acesulfame-K), kleurend concentraat (biet, wortel), zout, natuurlijk aroma.',
   }
 };
 
@@ -290,6 +290,39 @@ document.addEventListener('DOMContentLoaded', () => {
   // Apply saved language on load
   setLanguage(currentLang);
 
+  // --- Responsive Hero Video ---
+  const heroVideo = document.querySelector('.hero-video');
+  const desktopVideoQuery = window.matchMedia('(min-width: 769px)');
+  const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  function syncHeroVideo() {
+    if (!heroVideo) return;
+
+    const shouldLoadVideo = desktopVideoQuery.matches && !reducedMotionQuery.matches && !navigator.connection?.saveData;
+    const existingSource = heroVideo.querySelector('source');
+
+    if (shouldLoadVideo && !existingSource) {
+      const source = document.createElement('source');
+      source.src = heroVideo.dataset.videoSrc;
+      source.type = 'video/mp4';
+      heroVideo.appendChild(source);
+      heroVideo.load();
+      heroVideo.play().catch(() => {});
+      return;
+    }
+
+    if (!shouldLoadVideo && existingSource) {
+      heroVideo.pause();
+      existingSource.remove();
+      heroVideo.removeAttribute('src');
+      heroVideo.load();
+    }
+  }
+
+  syncHeroVideo();
+  desktopVideoQuery.addEventListener('change', syncHeroVideo);
+  reducedMotionQuery.addEventListener('change', syncHeroVideo);
+
 
   // --- Scroll Reveal (IntersectionObserver) ---
   const revealElements = document.querySelectorAll('.reveal');
@@ -310,8 +343,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Navbar Scroll Effect ---
   const navbar = document.getElementById('navbar');
-  let lastScroll = 0;
-
   const handleNavScroll = () => {
     const currentScroll = window.scrollY;
     if (currentScroll > 60) {
@@ -319,7 +350,6 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       navbar.classList.remove('scrolled');
     }
-    lastScroll = currentScroll;
   };
 
   window.addEventListener('scroll', handleNavScroll, { passive: true });
@@ -327,6 +357,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Smooth Scroll for Nav Links ---
   const navLinks = document.getElementById('navLinks');
   const navHamburger = document.getElementById('navHamburger');
+
+  function setMobileMenuOpen(isOpen) {
+    navLinks.classList.toggle('active', isOpen);
+    navHamburger.classList.toggle('active', isOpen);
+    navHamburger.setAttribute('aria-expanded', String(isOpen));
+    document.body.classList.toggle('menu-open', isOpen);
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
@@ -339,23 +376,26 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo({ top, behavior: 'smooth' });
 
         // Close mobile menu
-        navLinks.classList.remove('active');
-        navHamburger.classList.remove('active');
+        setMobileMenuOpen(false);
       }
     });
   });
 
   // --- Mobile Menu Toggle ---
   navHamburger.addEventListener('click', () => {
-    navHamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
+    setMobileMenuOpen(!navLinks.classList.contains('active'));
   });
 
   // Close menu on outside click
   document.addEventListener('click', (e) => {
     if (!navLinks.contains(e.target) && !navHamburger.contains(e.target)) {
-      navLinks.classList.remove('active');
-      navHamburger.classList.remove('active');
+      setMobileMenuOpen(false);
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      setMobileMenuOpen(false);
     }
   });
 

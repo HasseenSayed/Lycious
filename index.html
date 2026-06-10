@@ -8,6 +8,7 @@
     <meta name="description"
         content="Lycious — A premium lychee drink, full and refreshing in taste. Made with real lychee puree. Pure attention to flavor.">
     <meta name="keywords" content="Lycious, lychee, drink, premium, natural, fruit, refreshing">
+    <link rel="preload" href="images/hero-bg-optimized.jpg" as="image">
     <link rel="stylesheet" href="index.css">
     <link rel="icon" href="images/logo.png">
 </head>
@@ -39,7 +40,7 @@
                     </svg>
                     <span class="lang-code" id="langCode">EN</span>
                 </button>
-                <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu">
+                <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -51,14 +52,13 @@
     <!-- ===== HERO ===== -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <img src="images/hero-bg.png" alt="Lychee background" id="heroBgImg">
+            <img src="images/hero-bg-optimized.jpg" alt="Lychee background" id="heroBgImg" fetchpriority="high" decoding="async">
         </div>
         <div class="hero-overlay"></div>
         <div class="container">
             <div class="hero-content">
-                <div class="hero-badge reveal" data-i18n="hero.badge">Website onder ontwikkeling</div>
                 <h1 class="hero-title reveal reveal-delay-1">
-                    <img src="images/Lycious.png" class="lycious-svg" />
+                    <img src="images/Lycious.png" class="lycious-svg" alt="Lycious" fetchpriority="high" decoding="async">
                 </h1>
                 <p class="hero-subtitle reveal reveal-delay-2" data-i18n="hero.subtitle">Lychee, like you've rarely
                     tasted.</p>
@@ -75,8 +75,7 @@
             <div class="hero-visual reveal reveal-delay-2">
                 <div class="hero-image-wrapper">
                     <div class="hero-image-glow"></div>
-                    <video autoplay muted loop playsinline poster="images/tafel.JPG">
-                        <source src="videos/LyciousGif.mp4" type="video/mp4">
+                    <video class="hero-video" autoplay muted loop playsinline preload="none" poster="images/tafel-960.jpg" data-video-src="videos/LyciousGif.mp4" aria-label="Lycious lychee drink">
                     </video>
                 </div>
             </div>
@@ -91,7 +90,7 @@
     <section class="about" id="about">
         <div class="container">
             <div class="about-image reveal">
-                <img src="images/hoodie.JPG" alt="Fresh lychee fruits with water splash">
+                <img src="images/hoodie-640.jpg" srcset="images/hoodie-640.jpg 640w, images/hoodie-900.jpg 900w" sizes="(max-width: 768px) calc(100vw - 3rem), 50vw" alt="Fresh lychee fruits with water splash" loading="lazy" decoding="async">
             </div>
             <div class="about-text">
                 <span class="section-label reveal" data-i18n="about.label">Our Story</span>
@@ -109,7 +108,7 @@
                 <p class="reveal reveal-delay-3" data-i18n="about.p2">
                     Every bottle of Lycious is crafted with real lychee puree, carefully balanced to be subtly sweet,
                     refreshingly crisp, and absolutely delicious. No artificial colors — just natural goodness in a
-                    beautiful 200ml glass bottle.
+                    beautiful 275ml glass bottle.
                 </p>
                 <div class="about-stats reveal reveal-delay-4">
                     <div class="about-stat">
@@ -135,7 +134,7 @@
             <div class="product-header">
                 <span class="section-label reveal" data-i18n="product.label">The Drink</span>
                 <h2 class="section-title reveal reveal-delay-1" data-i18n="product.title" data-i18n-html="true">
-                    <img src="images/Lycious.png" class="lycious-svg" /> Lychee Drink
+                    <img src="images/Lycious.png" class="lycious-svg" alt="Lycious" loading="lazy" decoding="async"> Lychee Drink
                 </h2>
                 <p class="reveal reveal-delay-2" data-i18n="product.subtitle">Full & refreshing in taste — a premium
                     lychee drink like no other.</p>
@@ -143,7 +142,7 @@
 
             <div class="product-showcase">
                 <div class="product-image-card reveal">
-                    <img src="images/tafel.JPG" alt="Lycious Lychee Drink">
+                    <img src="images/tafel-640.jpg" srcset="images/tafel-640.jpg 640w, images/tafel-960.jpg 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 42vw" alt="Lycious Lychee Drink" loading="lazy" decoding="async">
                 </div>
 
                 <div class="product-details">
@@ -237,7 +236,7 @@
                 <div class="value-card reveal reveal-delay-3">
                     <div class="value-icon">📍</div>
                     <h3 data-i18n="values.card3_title">Locally Produced</h3>
-                    <p data-i18n="values.card3_desc">Locally produced in Heemskerk, by 2 young entrepeneurs with passion for lychee.</p>
+                    <p data-i18n="values.card3_desc">Locally produced in Heemskerk, by two young entrepreneurs with passion for lychee.</p>
                 </div>
             </div>
         </div>

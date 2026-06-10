@@ -208,6 +208,7 @@ ul {
 .logo-svg--nav {
     height: 60px;
     width: auto;
+    max-width: 150px;
 }
 
 .logo-svg--footer {
@@ -1345,6 +1346,66 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .hero {
+        min-height: auto;
+    }
+
+    .hero .container {
+        min-height: auto;
+        gap: var(--space-md);
+        padding-top: calc(var(--nav-height) + var(--space-md));
+        padding-bottom: var(--space-lg);
+    }
+
+    .hero-content {
+        padding: 0;
+    }
+
+    .hero-badge {
+        font-size: 0.68rem;
+        letter-spacing: 0.8px;
+        padding: 7px 16px;
+        margin-bottom: var(--space-sm);
+    }
+
+    .hero-title {
+        margin-bottom: var(--space-xs);
+    }
+
+    .lycious-svg {
+        height: clamp(64px, 24vw, 96px);
+        margin: 0 auto;
+    }
+
+    .hero-subtitle {
+        font-size: 1.15rem;
+    }
+
+    .hero-tagline {
+        font-size: 0.98rem;
+        line-height: 1.65;
+    }
+
+    .hero-visual {
+        margin-top: 0;
+    }
+
+    .hero-image-wrapper {
+        max-width: min(330px, 82vw);
+        animation: none;
+    }
+
+    .hero-image-wrapper img,
+    .hero-image-wrapper video {
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: 0 16px 36px rgba(61, 26, 19, 0.16);
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
     .nav-links {
         position: fixed;
         top: 0;
@@ -1363,6 +1424,10 @@ ul {
 
     .nav-links.active {
         right: 0;
+    }
+
+    body.menu-open {
+        overflow: hidden;
     }
 
     .nav-links a {
@@ -1422,6 +1487,8 @@ ul {
     .btn {
         width: 100%;
         justify-content: center;
+        min-height: 48px;
+        padding: 13px 20px;
     }
 }
 
@@ -1435,5 +1502,29 @@ ul {
 
     .hero-title {
         font-size: 3.5rem;
+    }
+
+    .container {
+        padding: 0 1.25rem;
+    }
+
+    .logo-svg--nav {
+        height: 52px;
+        max-width: 112px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
     }
 }
