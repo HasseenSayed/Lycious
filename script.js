@@ -21,6 +21,7 @@ const translations = {
     'nav.about': 'About',
     'nav.product': 'Product',
     'nav.values': 'Our Values',
+    'nav.stockists': 'Where to Buy',
     'nav.order': 'Order',
     'nav.cta': 'Get in Touch',
 
@@ -73,6 +74,22 @@ const translations = {
     'values.card2_desc': 'From the recipe to the glass bottle to the label, every element is crafted with care and attention to detail.',
     'values.card3_title': 'Locally Produced',
     'values.card3_desc': 'Locally produced in Heemskerk, by two young entrepreneurs with passion for lychee.',
+
+    // Stockists
+    'stockists.label': 'Where to Buy',
+    'stockists.title': '<em>Lycious</em> is available here',
+    'stockists.subtitle': 'Order directly from us, or find Lycious at the shops listed below.',
+    'stockists.badge_direct': 'Direct from Lycious',
+    'stockists.direct_title': 'The Lycious Company',
+    'stockists.direct_desc': 'Place an order through the website and we will confirm availability, delivery, and payment.',
+    'stockists.direct_cta': 'Order bottles',
+    'stockists.badge_location': 'Stockist',
+    'stockists.shop1_title': 'Shop name',
+    'stockists.shop1_address_1': 'Street and house number',
+    'stockists.shop1_address_2': 'Postcode and city',
+    'stockists.shop2_title': 'Shop name',
+    'stockists.shop2_address_1': 'Street and house number',
+    'stockists.shop2_address_2': 'Postcode and city',
 
     // Order
     'order.label': 'Order',
@@ -128,6 +145,7 @@ const translations = {
     'nav.about': 'Over Ons',
     'nav.product': 'Product',
     'nav.values': 'Onze Waarden',
+    'nav.stockists': 'Verkrijgbaar bij',
     'nav.order': 'Bestellen',
     'nav.cta': 'Neem Contact Op',
 
@@ -180,6 +198,22 @@ const translations = {
     'values.card2_desc': 'Van het recept tot het glazen flesje tot het etiket, elk element is met zorg en aandacht voor detail gemaakt.',
     'values.card3_title': 'Lokaal Geproduceerd',
     'values.card3_desc': 'Lokaal geproduceerd in Heemskerk, door twee jonge ondernemers met passie voor lychee.',
+
+    // Stockists
+    'stockists.label': 'Verkrijgbaar bij',
+    'stockists.title': '<em>Lycious</em> is hier verkrijgbaar',
+    'stockists.subtitle': 'Bestel direct bij ons, of vind Lycious bij de verkooppunten hieronder.',
+    'stockists.badge_direct': 'Direct bij Lycious',
+    'stockists.direct_title': 'The Lycious Company',
+    'stockists.direct_desc': 'Plaats je bestelling via de website. Wij bevestigen beschikbaarheid, levering en betaling.',
+    'stockists.direct_cta': 'Bestel flesjes',
+    'stockists.badge_location': 'Verkooppunt',
+    'stockists.shop1_title': 'Naam winkel',
+    'stockists.shop1_address_1': 'Straat en huisnummer',
+    'stockists.shop1_address_2': 'Postcode en plaats',
+    'stockists.shop2_title': 'Naam winkel',
+    'stockists.shop2_address_1': 'Straat en huisnummer',
+    'stockists.shop2_address_2': 'Postcode en plaats',
 
     // Order
     'order.label': 'Bestellen',

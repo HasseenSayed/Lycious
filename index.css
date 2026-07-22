@@ -945,6 +945,140 @@ ul {
 }
 
 /* ==========================================
+   STOCKISTS SECTION
+   ========================================== */
+.stockists {
+    padding: var(--space-2xl) 0;
+    background: var(--warm-white);
+    position: relative;
+    overflow: hidden;
+}
+
+.stockists::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('images/pattern-bg.png');
+    background-size: 520px;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+.stockists .container {
+    position: relative;
+    z-index: 1;
+}
+
+.stockists-header {
+    max-width: 680px;
+    margin: 0 auto var(--space-xl);
+    text-align: center;
+}
+
+.stockists-header p {
+    font-size: 1.1rem;
+    color: var(--pink-700);
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.stockists-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.stockist-card {
+    min-height: 100%;
+    padding: var(--space-md);
+    background: var(--cream);
+    border: 1px solid var(--pink-100);
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), border-color 0.3s var(--ease-out);
+}
+
+.stockist-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--blush);
+}
+
+.stockist-badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: white;
+    color: var(--brand-dark-red);
+    border: 1px solid var(--pink-200);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: var(--space-sm);
+}
+
+.stockist-logo-placeholder {
+    display: none;
+    width: 100%;
+    max-width: 150px;
+    height: 64px;
+    margin-bottom: var(--space-sm);
+}
+
+.stockist-logo-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.stockist-card h3 {
+    font-family: var(--font-heading);
+    color: var(--pink-900);
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: var(--space-xs);
+}
+
+.stockist-card p,
+.stockist-card address {
+    color: var(--pink-700);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.75;
+}
+
+.stockist-card address {
+    font-style: normal;
+    margin-bottom: var(--space-xs);
+}
+
+.stockist-link {
+    margin-top: auto;
+    padding-top: var(--space-md);
+    color: var(--brand-dark-red);
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.stockist-link::after {
+    content: '\2192';
+    transition: transform 0.25s var(--ease-out);
+}
+
+.stockist-link:hover::after {
+    transform: translateX(4px);
+}
+
+/* ==========================================
    ORDER SECTION
    ========================================== */
 .order {
@@ -1297,6 +1431,20 @@ ul {
 /* ==========================================
    RESPONSIVE
    ========================================== */
+@media (max-width: 1100px) {
+    .nav-links {
+        gap: var(--space-sm);
+    }
+
+    .nav-links a {
+        font-size: 0.82rem;
+    }
+
+    .nav-cta {
+        padding: 9px 18px !important;
+    }
+}
+
 @media (max-width: 1024px) {
     .hero .container {
         grid-template-columns: 1fr;
@@ -1441,6 +1589,12 @@ ul {
     .values-grid {
         grid-template-columns: 1fr;
         max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .stockists-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
         margin: 0 auto;
     }
 
