@@ -81,15 +81,8 @@ const translations = {
     'stockists.subtitle': 'Order directly from us, or find Lycious at the shops listed below.',
     'stockists.badge_direct': 'Direct from Lycious',
     'stockists.direct_title': 'The Lycious Company',
-    'stockists.direct_desc': 'Place an order through the website and we will confirm availability, delivery, and payment.',
+    'stockists.direct_desc': 'Place an order through the website.',
     'stockists.direct_cta': 'Order bottles',
-    'stockists.badge_location': 'Stockist',
-    'stockists.shop1_title': 'Shop name',
-    'stockists.shop1_address_1': 'Street and house number',
-    'stockists.shop1_address_2': 'Postcode and city',
-    'stockists.shop2_title': 'Shop name',
-    'stockists.shop2_address_1': 'Street and house number',
-    'stockists.shop2_address_2': 'Postcode and city',
 
     // Order
     'order.label': 'Order',
@@ -205,15 +198,8 @@ const translations = {
     'stockists.subtitle': 'Bestel direct bij ons, of vind Lycious bij de verkooppunten hieronder.',
     'stockists.badge_direct': 'Direct bij Lycious',
     'stockists.direct_title': 'The Lycious Company',
-    'stockists.direct_desc': 'Plaats je bestelling via de website. Wij bevestigen beschikbaarheid, levering en betaling.',
+    'stockists.direct_desc': 'Plaats je bestelling via de website.',
     'stockists.direct_cta': 'Bestel flesjes',
-    'stockists.badge_location': 'Verkooppunt',
-    'stockists.shop1_title': 'Naam winkel',
-    'stockists.shop1_address_1': 'Straat en huisnummer',
-    'stockists.shop1_address_2': 'Postcode en plaats',
-    'stockists.shop2_title': 'Naam winkel',
-    'stockists.shop2_address_1': 'Straat en huisnummer',
-    'stockists.shop2_address_2': 'Postcode en plaats',
 
     // Order
     'order.label': 'Bestellen',
