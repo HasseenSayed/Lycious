@@ -3,14 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Lycious</title>
     <meta name="description"
         content="Lycious — A premium lychee drink, full and refreshing in taste. Made with real lychee puree. Pure attention to flavor.">
     <meta name="keywords" content="Lycious, lychee, drink, premium, natural, fruit, refreshing">
     <link rel="preload" href="images/hero-bg-optimized.jpg" as="image">
-    <link rel="stylesheet" href="index.css">
-    <link rel="icon" href="images/Logos/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css?v=20260902">
+    <link rel="icon" type="image/svg+xml" href="images/Logos/favicon.svg">
 </head>
 
 <body>
@@ -20,7 +23,7 @@
         <div class="container">
             <a href="#home" class="nav-logo-stacked">
                 <object data="images/Logos/LogoSVG.svg" type="image/svg+xml" class="logo-svg logo-svg--nav">
-                    <img src="images/Logos/logo.png" class="logo-svg logo-svg--nav" />
+                    <img src="images/Logos/Lycious.png" class="logo-svg logo-svg--nav" alt="Lycious" />
                 </object>
             </a>
             <div class="nav-links" id="navLinks">
@@ -29,8 +32,8 @@
                 <a href="#product" data-i18n="nav.product">Product</a>
                 <a href="#values" data-i18n="nav.values">Our Values</a>
                 <a href="#stockists" data-i18n="nav.stockists">Where to Buy</a>
-                <a href="#order" data-i18n="nav.order">Order</a>
-                <a href="#contact" class="nav-cta" data-i18n="nav.cta">Get in Touch</a>
+                <a href="#contact" data-i18n="nav.cta">Get in Touch</a>
+                <a href="#order" class="nav-cta" data-i18n="nav.order">Order</a>
             </div>
             <div class="nav-right">
                 <button class="lang-toggle" id="langToggle" aria-label="Switch language">
@@ -68,15 +71,15 @@
                     sweet. Fresh. Delicious.
                 </p>
                 <div class="hero-actions reveal reveal-delay-4">
-                    <a href="#product" class="btn btn-primary" data-i18n="hero.cta_primary">Discover Our Drink</a>
-                    <a href="#order" class="btn btn-secondary" data-i18n="hero.cta_order">Order Now</a>
-                    <a href="#about" class="btn btn-secondary" data-i18n="hero.cta_secondary">Our Story</a>
+                    <a href="#order" class="btn btn-primary" data-i18n="hero.cta_order">Request an Order</a>
+                    <a href="#product" class="btn btn-secondary" data-i18n="hero.cta_primary">Discover Our Drink</a>
+                    <a href="#about" class="hero-link" data-i18n="hero.cta_secondary">Our Story</a>
                 </div>
             </div>
             <div class="hero-visual reveal reveal-delay-2">
                 <div class="hero-image-wrapper">
                     <div class="hero-image-glow"></div>
-                    <video class="hero-video" autoplay muted loop playsinline preload="none" poster="images/tafel.jpg" data-video-src="videos/LyciousGif.mp4" aria-label="Lycious lychee drink">
+                    <video class="hero-video" autoplay muted loop playsinline preload="none" poster="images/tafel.JPG" data-video-src="videos/LyciousGif.mp4" aria-label="Lycious lychee drink">
                     </video>
                 </div>
             </div>
@@ -91,10 +94,9 @@
     <section class="about" id="about">
         <div class="container">
             <div class="about-image reveal">
-                <img src="images/hoodie-640.jpg" srcset="images/hoodie-640.jpg 640w, images/hoodie-900.jpg 900w" sizes="(max-width: 768px) calc(100vw - 3rem), 50vw" alt="Fresh lychee fruits with water splash" loading="lazy" decoding="async">
+                <img src="images/hoodie-640.jpg" srcset="images/hoodie-640.jpg 640w, images/hoodie-900.jpg 900w" sizes="(max-width: 768px) calc(100vw - 3rem), 50vw" alt="Person wearing a cream Lycious hoodie with lychee artwork" loading="lazy" decoding="async">
             </div>
             <div class="about-text">
-                <span class="section-label reveal" data-i18n="about.label">Our Story</span>
                 <h2 class="section-title reveal reveal-delay-1" data-i18n="about.title" data-i18n-html="true">
                     Made with <em>Pure Attention</em>
                 </h2>
@@ -133,17 +135,17 @@
     <section class="product" id="product">
         <div class="container">
             <div class="product-header">
-                <span class="section-label reveal" data-i18n="product.label">The Drink</span>
-                <h2 class="section-title reveal reveal-delay-1" data-i18n="product.title" data-i18n-html="true">
-                    <img src="images/Lycious.png" class="lycious-svg" alt="Lycious" loading="lazy" decoding="async"> Lychee Drink
+                <h2 class="section-title reveal reveal-delay-1">
+                    <img src="images/Logos/Lycious.svg" alt="Lycious" class="lycious-svg" loading="lazy" decoding="async"> Lychee Drink
                 </h2>
                 <p class="reveal reveal-delay-2" data-i18n="product.subtitle">Full & refreshing in taste — a premium
                     lychee drink like no other.</p>
             </div>
 
             <div class="product-showcase">
-                <div class="product-image-card reveal">
-                    <img src="images/bottle.jpg" srcset="images/bottle.jpg 640w, images/bottle.jpg 960w" sizes="(max-width: 768px) calc(100vw - 3rem), 42vw" alt="Lycious Lychee Drink" loading="lazy" decoding="async">
+                <div class="product-model-stage reveal" data-bottle-viewer data-model-src="models/bottle.glb">
+                    <img class="product-model-fallback" src="images/bottle.jpg" alt="Bottle of Lycious lychee drink" loading="lazy" decoding="async">
+                    <p class="product-model-status" data-model-status data-i18n="product.model_loading" aria-live="polite">Loading bottle</p>
                 </div>
 
                 <div class="product-details">
@@ -155,28 +157,36 @@
 
                     <div class="product-features">
                         <div class="product-feature reveal reveal-delay-1">
-                            <div class="product-feature-icon">🍈</div>
+                            <div class="product-feature-icon" aria-hidden="true">
+                                <svg class="ui-icon" viewBox="0 0 24 24"><circle cx="11" cy="13" r="6.5"></circle><path d="M14 6c1.2-2.4 3.7-3.5 6-2.6-.5 2.8-2.7 4.8-5.6 4.8"></path><path d="M8.5 9.5c1.8 1.1 3.7 1.5 5.8 1.1"></path></svg>
+                            </div>
                             <div>
                                 <h4 data-i18n="product.feat1_title">Real Lychee</h4>
                                 <p data-i18n="product.feat1_desc">Made with 5% lychee puree</p>
                             </div>
                         </div>
                         <div class="product-feature reveal reveal-delay-2">
-                            <div class="product-feature-icon">🌿</div>
+                            <div class="product-feature-icon" aria-hidden="true">
+                                <svg class="ui-icon" viewBox="0 0 24 24"><path d="M20.5 3.5C12 4 6.2 7.6 5 15.5c4.8 1.1 9-.3 11.7-4.1 1.8-2.5 2.8-5.3 3.8-7.9Z"></path><path d="M4 20c2.6-4.6 6-7.8 10.5-10"></path></svg>
+                            </div>
                             <div>
                                 <h4 data-i18n="product.feat2_title">Natural Aroma</h4>
                                 <p data-i18n="product.feat2_desc">Natural flavoring only</p>
                             </div>
                         </div>
                         <div class="product-feature reveal reveal-delay-3">
-                            <div class="product-feature-icon">✨</div>
+                            <div class="product-feature-icon" aria-hidden="true">
+                                <svg class="ui-icon" viewBox="0 0 24 24"><path d="m12 3 1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5L12 3Z"></path><path d="m19 15 .8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8L19 15Z"></path></svg>
+                            </div>
                             <div>
                                 <h4 data-i18n="product.feat3_title">Low Calorie</h4>
                                 <p data-i18n="product.feat3_desc">Only 29 kcal per 100ml</p>
                             </div>
                         </div>
                         <div class="product-feature reveal reveal-delay-4">
-                            <div class="product-feature-icon">♻️</div>
+                            <div class="product-feature-icon" aria-hidden="true">
+                                <svg class="ui-icon" viewBox="0 0 24 24"><path d="m8.5 6 2-3 2 3"></path><path d="M10.5 3H15a4 4 0 0 1 3.5 2l1 1.8"></path><path d="m19.5 9 3 .2-1.3 2.7"></path><path d="m21.8 9.2-2.2 3.9a4 4 0 0 1-3.5 2H14"></path><path d="m11.5 18-2 3-2-3"></path><path d="M9.5 21H5a4 4 0 0 1-3.5-6l1-1.8"></path><path d="m4.5 11-3-.2 1.3-2.7"></path><path d="m1.2 10.8 2.2-3.9A4 4 0 0 1 7 5h1"></path></svg>
+                            </div>
                             <div>
                                 <h4 data-i18n="product.feat4_title">Glass Bottle</h4>
                                 <p data-i18n="product.feat4_desc">100% recyclable packaging</p>
@@ -216,7 +226,6 @@
     <section class="values" id="values">
         <div class="container">
             <div class="values-header">
-                <span class="section-label reveal" data-i18n="values.label">Why Lycious</span>
                 <h2 class="section-title reveal reveal-delay-1" data-i18n="values.title" data-i18n-html="true">
                     Our <em>Values</em>
                 </h2>
@@ -225,17 +234,17 @@
             </div>
             <div class="values-grid">
                 <div class="value-card reveal">
-                    <div class="value-icon">🎯</div>
+                    <div class="value-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="4.5"></circle><path d="m12 12 7-7"></path><path d="M16.5 5H19v2.5"></path></svg></div>
                     <h3 data-i18n="values.card1_title">Authentic Taste</h3>
                     <p data-i18n="values.card1_desc">We use real lychee puree to deliver the genuine, exotic sweetness you deserve, not artificial imitations.</p>
                 </div>
                 <div class="value-card reveal reveal-delay-2">
-                    <div class="value-icon">💎</div>
+                    <div class="value-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="m4 8 4-4h8l4 4-8 12L4 8Z"></path><path d="M4 8h16"></path><path d="m8 4 4 4 4-4"></path><path d="m8 8 4 12 4-12"></path></svg></div>
                     <h3 data-i18n="values.card2_title">Premium Quality</h3>
                     <p data-i18n="values.card2_desc">From the recipe to the glass bottle to the label, every element is crafted with care and attention to detail.</p>
                 </div>
                 <div class="value-card reveal reveal-delay-3">
-                    <div class="value-icon">📍</div>
+                    <div class="value-icon" aria-hidden="true"><svg class="ui-icon" viewBox="0 0 24 24"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></div>
                     <h3 data-i18n="values.card3_title">Locally Produced</h3>
                     <p data-i18n="values.card3_desc">Locally produced in Heemskerk, by two young entrepreneurs with passion for lychee.</p>
                 </div>
@@ -247,7 +256,6 @@
     <section class="stockists" id="stockists">
         <div class="container">
             <div class="stockists-header">
-                <span class="section-label reveal" data-i18n="stockists.label">Where to Buy</span>
                 <h2 class="section-title reveal reveal-delay-1" data-i18n="stockists.title" data-i18n-html="true">
                     <em>Lycious</em> is available here
                 </h2>
@@ -257,15 +265,15 @@
             </div>
 
             <div class="stockists-grid">
-                <article class="stockist-card reveal">
+                <article class="stockist-card stockist-card--direct reveal">
                     <div class="stockist-logo-placeholder stockist-logo-placeholder--initials" aria-hidden="true">
                         <img src="images/Logos/LogoSVG.svg" alt="The Lycious Company logo" loading="lazy" decoding="async">
                     </div>
                     <h3 data-i18n="stockists.direct_title">The Lycious Company</h3>
                     <p data-i18n="stockists.direct_desc">
-                        Place an order through the website
+                        Send an order request through the website
                     </p>
-                    <a href="#order" class="stockist-link" data-i18n="stockists.direct_cta">Order bottles</a>
+                    <a href="#order" class="stockist-link" data-i18n="stockists.direct_cta">Request bottles</a>
                 </article>
 
                 <article class="stockist-card reveal reveal-delay-2">
@@ -356,6 +364,17 @@
                         <span>1966 WD Heemskerk</span>
                     </address>
                 </article>
+
+                <article class="stockist-card reveal reveal-delay-5">
+                    <div class="stockist-logo-placeholder stockist-logo-placeholder--initials" aria-hidden="true">
+                        <img src="images/Shops/rakash.png" alt="Rakash Supermarkt logo" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Rakash Supermarkt</h3>
+                    <address>
+                        <span>Breestraat 70</span><br>
+                        <span>1941 EK Beverwijk</span>
+                    </address>
+                </article>
             </div>
         </div>
     </section>
@@ -364,9 +383,8 @@
     <section class="order" id="order">
         <div class="container">
             <div class="order-intro">
-                <span class="section-label reveal" data-i18n="order.label">Order</span>
                 <h2 class="section-title reveal reveal-delay-1" data-i18n="order.title" data-i18n-html="true">
-                    Place a <em>Lycious</em> Order
+                    Request a <em>Lycious</em> Order
                 </h2>
                 <p class="reveal reveal-delay-2" data-i18n="order.subtitle">
                     Send us your details and preferred quantity. We will confirm availability, delivery, and payment.
@@ -406,25 +424,21 @@
                             <span data-i18n="order.quantity">Bottles</span>
                             <input type="number" name="quantity" id="orderQuantity" min="1" step="1" value="12" required>
                         </label>
-                        <label>
+                        <label class="field-wide">
                             <span data-i18n="order.delivery">Delivery preference</span>
                             <select name="delivery" id="orderDelivery" required>
                                 <option value="delivery" data-i18n="order.delivery_option">Delivery</option>
                                 <option value="pickup" data-i18n="order.pickup_option">Pickup in Heemskerk</option>
                             </select>
                         </label>
-                        <label>
-                            <span data-i18n="order.payment">Payment preference</span>
-                            <select name="payment" id="orderPayment" required>
-                                <option value="invoice" data-i18n="order.invoice_option">Invoice / payment link</option>
-                                <option value="online" data-i18n="order.online_option">Online checkout when available</option>
-                            </select>
-                        </label>
                     </div>
 
-                    <label>
+                    <input type="hidden" name="payment" value="invoice">
+
+                    <label id="orderAddressLabel">
                         <span data-i18n="order.address">Delivery address</span>
-                        <textarea name="address" id="orderAddress" rows="3" autocomplete="street-address"></textarea>
+                        <textarea name="address" id="orderAddress" rows="3" autocomplete="street-address" aria-describedby="orderAddressHint"></textarea>
+                        <small class="field-hint" id="orderAddressHint" data-i18n="order.address_hint">Required for delivery.</small>
                     </label>
 
                     <label>
@@ -445,9 +459,10 @@
                         <p data-i18n="order.summary_note">No payment is taken until your order is confirmed.</p>
                     </div>
 
-                    <button class="btn btn-primary order-submit" type="submit" data-i18n="order.submit">
-                        Place Order
-                    </button>
+                    <div class="order-form-actions">
+                        <button class="btn btn-primary order-submit" type="submit" data-i18n="order.submit">Request Order</button>
+                        <button class="order-clear" type="reset" data-i18n="order.clear">Clear form</button>
+                    </div>
                     <p class="order-status" id="orderStatus" role="status" aria-live="polite"></p>
                 </form>
             </div>
@@ -473,7 +488,7 @@
                 <div class="footer-brand">
                     <a href="#home" class="nav-logo-stacked">
                         <object data="images/Logos/LogoSVG.svg" type="image/svg+xml" class="logo-svg logo-svg--footer">
-                            <img src="images/Logos/logo.png" class="logo-svg logo-svg--footer" />
+                            <img src="images/Logos/Lycious.png" class="logo-svg logo-svg--footer" alt="Lycious" />
                         </object>
                     </a>
                     <p data-i18n="footer.brand_desc">Premium lychee drink — full and refreshing in taste. Made with real
@@ -496,12 +511,12 @@
                         <p>The Lycious Company</p>
                         <p>Karshoffstraat 34</p>
                         <p>1964CD Heemskerk</p>
-                        <p style="margin-top: 8px;">📧 info@lycious.nl</p>
+                        <p class="footer-email"><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m4 7 8 6 8-6"></path></svg><a href="mailto:info@lycious.nl">info@lycious.nl</a></p>
                     </div>
                 </div>
                 <div>
                     <h4 data-i18n="footer.ingredients_title">About the Drink</h4>
-                    <p style="font-size: 0.85rem; line-height: 1.8;" data-i18n="footer.ingredients">
+                    <p class="footer-ingredients" data-i18n="footer.ingredients">
                         Ingredients: water, sugar, lychee puree (5%), food acid (citric acid), stabilizer (xanthan gum),
                         sweeteners (erythritol, acesulfame-K), coloring concentrate (beet, carrot), salt, natural aroma.
                     </p>
@@ -513,7 +528,18 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260902"></script>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+            }
+        }
+    </script>
+    <script type="module" src="bottle-viewer.js?v=20260902"></script>
+<!-- impeccable-live-start -->
+<script src="http://localhost:8400/live.js?token=abcc3001-e25f-4433-9c66-4862c5ad07b6"></script>
+<!-- impeccable-live-end -->
 </body>
 
 </html>

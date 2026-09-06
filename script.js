@@ -2,10 +2,9 @@
    LYCIOUS — Interactive Scripts + i18n
    ========================================== */
 
-// Add your hosted payment URL or order API endpoint here when ready.
+// Add your hosted order API endpoint here when ready.
 const orderConfig = {
   backendEndpoint: '',
-  paymentUrl: '',
   notificationEmail: 'info@lycious.nl'
 };
 
@@ -30,7 +29,7 @@ const translations = {
     'hero.subtitle': "Lychee, like you've rarely tasted.",
     'hero.tagline': 'We missed a drink that does justice to the real taste of lychee. So we made it ourselves. Subtly sweet. Fresh. Delicious.',
     'hero.cta_primary': 'Discover Our Drink',
-    'hero.cta_order': 'Order Now',
+    'hero.cta_order': 'Request an Order',
     'hero.cta_secondary': 'Our Story',
 
     // About
@@ -63,6 +62,7 @@ const translations = {
     'product.carbs': 'Carbohydrates',
     'product.sugars': '— of which sugars',
     'product.salt': 'Salt',
+    'product.model_loading': 'Loading bottle',
 
     // Values
     'values.label': 'Why Lycious',
@@ -81,12 +81,12 @@ const translations = {
     'stockists.subtitle': 'Order directly from us, or find Lycious at the shops listed below.',
     'stockists.badge_direct': 'Direct from Lycious',
     'stockists.direct_title': 'The Lycious Company',
-    'stockists.direct_desc': 'Place an order through the website.',
-    'stockists.direct_cta': 'Order bottles',
+    'stockists.direct_desc': 'Send an order request through the website.',
+    'stockists.direct_cta': 'Request bottles',
 
     // Order
     'order.label': 'Order',
-    'order.title': 'Place a <em>Lycious</em> Order',
+    'order.title': 'Request a <em>Lycious</em> Order',
     'order.subtitle': 'Send us your details and preferred quantity. We will confirm availability, delivery, and payment.',
     'order.step1': 'Choose a quantity',
     'order.step2': 'Leave your details',
@@ -98,22 +98,20 @@ const translations = {
     'order.delivery': 'Delivery preference',
     'order.delivery_option': 'Delivery',
     'order.pickup_option': 'Pickup in Heemskerk',
-    'order.payment': 'Payment preference',
-    'order.invoice_option': 'Invoice / payment link',
-    'order.online_option': 'Online checkout when available',
     'order.address': 'Delivery address',
+    'order.address_hint': 'Required for delivery.',
     'order.notes': 'Notes',
     'order.remember': 'Remember my details on this device',
     'order.summary_label': 'Order request',
     'order.summary_note': 'No payment is taken until your order is confirmed.',
-    'order.submit': 'Place Order',
+    'order.submit': 'Request Order',
+    'order.clear': 'Clear form',
     'order.bottle_single': 'bottle',
     'order.bottle_plural': 'bottles',
-    'order.sending': 'Sending your order...',
+    'order.sending': 'Preparing your order request...',
     'order.email_fallback': 'Your email app is opening with the order details.',
     'order.success': 'Thank you. Your order request has been sent.',
     'order.error': 'We could not send the order automatically. Please try again or email info@lycious.nl.',
-    'order.payment_redirect': 'Order received. Redirecting to checkout...',
 
     // CTA
     'cta.title': 'Try Lycious Today',
@@ -147,7 +145,7 @@ const translations = {
     'hero.subtitle': 'Lychee, zoals je \'m zelden proeft.',
     'hero.tagline': 'We misten een drankje dat recht doet aan de echte smaak van lychee. Dus maakten we het zelf. Subtiel zoet. Fris. Heerlijk.',
     'hero.cta_primary': 'Ontdek Ons Drankje',
-    'hero.cta_order': 'Bestel Nu',
+    'hero.cta_order': 'Bestelling Aanvragen',
     'hero.cta_secondary': 'Ons Verhaal',
 
     // About
@@ -180,6 +178,7 @@ const translations = {
     'product.carbs': 'Koolhydraten',
     'product.sugars': '— waarvan suikers',
     'product.salt': 'Zout',
+    'product.model_loading': 'Flesje laden',
 
     // Values
     'values.label': 'Waarom Lycious',
@@ -198,12 +197,12 @@ const translations = {
     'stockists.subtitle': 'Bestel direct bij ons, of vind Lycious bij de verkooppunten hieronder.',
     'stockists.badge_direct': 'Direct bij Lycious',
     'stockists.direct_title': 'The Lycious Company',
-    'stockists.direct_desc': 'Plaats je bestelling via de website.',
-    'stockists.direct_cta': 'Bestel flesjes',
+    'stockists.direct_desc': 'Stuur je bestelaanvraag via de website.',
+    'stockists.direct_cta': 'Flesjes aanvragen',
 
     // Order
     'order.label': 'Bestellen',
-    'order.title': 'Plaats een <em>Lycious</em> bestelling',
+    'order.title': 'Vraag een <em>Lycious</em> bestelling aan',
     'order.subtitle': 'Stuur je gegevens en gewenste aantal door. Wij bevestigen beschikbaarheid, levering en betaling.',
     'order.step1': 'Kies een aantal',
     'order.step2': 'Laat je gegevens achter',
@@ -215,22 +214,20 @@ const translations = {
     'order.delivery': 'Leveringsvoorkeur',
     'order.delivery_option': 'Bezorgen',
     'order.pickup_option': 'Afhalen in Heemskerk',
-    'order.payment': 'Betaalvoorkeur',
-    'order.invoice_option': 'Factuur / betaallink',
-    'order.online_option': 'Online checkout zodra beschikbaar',
     'order.address': 'Bezorgadres',
+    'order.address_hint': 'Verplicht bij bezorgen.',
     'order.notes': 'Opmerkingen',
     'order.remember': 'Onthoud mijn gegevens op dit apparaat',
     'order.summary_label': 'Bestelaanvraag',
     'order.summary_note': 'Er wordt pas betaald nadat je bestelling is bevestigd.',
-    'order.submit': 'Plaats Bestelling',
+    'order.submit': 'Bestelling Aanvragen',
+    'order.clear': 'Formulier wissen',
     'order.bottle_single': 'flesje',
     'order.bottle_plural': 'flesjes',
-    'order.sending': 'Je bestelling wordt verzonden...',
+    'order.sending': 'Je bestelaanvraag wordt voorbereid...',
     'order.email_fallback': 'Je e-mailapp wordt geopend met de bestelgegevens.',
     'order.success': 'Bedankt. Je bestelaanvraag is verzonden.',
     'order.error': 'We konden de bestelling niet automatisch verzenden. Probeer opnieuw of mail naar info@lycious.nl.',
-    'order.payment_redirect': 'Bestelling ontvangen. Je wordt doorgestuurd naar checkout...',
 
     // CTA
     'cta.title': 'Probeer Lycious Vandaag',
@@ -276,6 +273,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Update toggle button
     langCode.textContent = lang.toUpperCase();
+    const languageLabel = lang === 'en' ? 'Switch to Dutch' : 'Overschakelen naar Engels';
+    langToggle.setAttribute('aria-label', languageLabel);
+    langToggle.title = languageLabel;
 
     // Update page title
     document.title = lang === 'en'
@@ -312,7 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Responsive Hero Video ---
   const heroVideo = document.querySelector('.hero-video');
-  const desktopVideoQuery = window.matchMedia('(min-width: 769px)');
+  const desktopVideoQuery = window.matchMedia('(min-width: 1025px) and (hover: hover)');
   const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function syncHeroVideo() {
@@ -377,12 +377,27 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Smooth Scroll for Nav Links ---
   const navLinks = document.getElementById('navLinks');
   const navHamburger = document.getElementById('navHamburger');
+  const mobileNavQuery = window.matchMedia('(max-width: 960px)');
 
   function setMobileMenuOpen(isOpen) {
-    navLinks.classList.toggle('active', isOpen);
-    navHamburger.classList.toggle('active', isOpen);
-    navHamburger.setAttribute('aria-expanded', String(isOpen));
-    document.body.classList.toggle('menu-open', isOpen);
+    const shouldOpen = mobileNavQuery.matches && isOpen;
+
+    if (!shouldOpen && navLinks.contains(document.activeElement)) {
+      navHamburger.focus();
+    }
+
+    navLinks.classList.toggle('active', shouldOpen);
+    navHamburger.classList.toggle('active', shouldOpen);
+    navHamburger.setAttribute('aria-expanded', String(shouldOpen));
+    document.body.classList.toggle('menu-open', shouldOpen);
+
+    if (mobileNavQuery.matches) {
+      navLinks.toggleAttribute('inert', !shouldOpen);
+      navLinks.setAttribute('aria-hidden', String(!shouldOpen));
+    } else {
+      navLinks.removeAttribute('inert');
+      navLinks.removeAttribute('aria-hidden');
+    }
   }
 
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -403,8 +418,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Mobile Menu Toggle ---
   navHamburger.addEventListener('click', () => {
-    setMobileMenuOpen(!navLinks.classList.contains('active'));
+    const shouldOpen = !navLinks.classList.contains('active');
+    setMobileMenuOpen(shouldOpen);
+
+    if (shouldOpen) {
+      navLinks.querySelector('a')?.focus();
+    }
   });
+
+  mobileNavQuery.addEventListener('change', () => setMobileMenuOpen(false));
+  setMobileMenuOpen(false);
 
   // Close menu on outside click
   document.addEventListener('click', (e) => {
@@ -496,8 +519,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const quantityInput = document.getElementById('orderQuantity');
+    const deliverySelect = document.getElementById('orderDelivery');
+    const addressInput = document.getElementById('orderAddress');
+    const addressHint = document.getElementById('orderAddressHint');
+    const submitButton = orderForm.querySelector('[type="submit"]');
+    const clearButton = orderForm.querySelector('[type="reset"]');
+
+    const syncDeliveryAddress = () => {
+      const addressIsRequired = deliverySelect.value === 'delivery';
+      addressInput.required = addressIsRequired;
+      addressInput.setAttribute('aria-required', String(addressIsRequired));
+      addressHint.hidden = !addressIsRequired;
+    };
+
+    const setSubmitting = (isSubmitting) => {
+      submitButton.disabled = isSubmitting;
+      orderForm.setAttribute('aria-busy', String(isSubmitting));
+    };
+
     quantityInput.addEventListener('input', updateOrderSummary);
+    deliverySelect.addEventListener('change', syncDeliveryAddress);
+    clearButton.addEventListener('click', () => {
+      localStorage.removeItem('lycious-order-details');
+      orderStatus.className = 'order-status';
+      orderStatus.textContent = '';
+      setTimeout(() => {
+        updateOrderSummary();
+        syncDeliveryAddress();
+      }, 0);
+    });
+
     updateOrderSummary();
+    syncDeliveryAddress();
 
     orderForm.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -523,6 +576,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       orderStatus.className = 'order-status';
       orderStatus.textContent = getTranslation('order.sending');
+      setSubmitting(true);
 
       if (formData.get('remember')) {
         localStorage.setItem('lycious-order-details', JSON.stringify({
@@ -547,23 +601,11 @@ document.addEventListener('DOMContentLoaded', () => {
             throw new Error(`Order endpoint returned ${response.status}`);
           }
 
-          if (order.payment === 'online' && orderConfig.paymentUrl) {
-            orderStatus.textContent = getTranslation('order.payment_redirect');
-            window.location.href = orderConfig.paymentUrl;
-            return;
-          }
-
           orderStatus.classList.add('success');
           orderStatus.textContent = getTranslation('order.success');
           orderForm.reset();
           updateOrderSummary();
-          return;
-        }
-
-        if (order.payment === 'online' && orderConfig.paymentUrl) {
-          localStorage.setItem('lycious-pending-order', JSON.stringify(order));
-          orderStatus.textContent = getTranslation('order.payment_redirect');
-          window.location.href = orderConfig.paymentUrl;
+          setSubmitting(false);
           return;
         }
 
@@ -585,10 +627,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window.location.href = mailtoUrl;
         orderStatus.classList.add('success');
         orderStatus.textContent = getTranslation('order.email_fallback');
+        setTimeout(() => setSubmitting(false), 1500);
       } catch (error) {
         console.error(error);
         orderStatus.classList.add('error');
         orderStatus.textContent = getTranslation('order.error');
+        setSubmitting(false);
       }
     });
   }

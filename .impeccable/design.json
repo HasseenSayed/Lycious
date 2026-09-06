@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-02T00:00:00+02:00",
+  "title": "Design System: Lycious",
+  "extensions": {
+    "colorMeta": {
+      "lycious-burgundy": {
+        "role": "primary",
+        "displayName": "Lycious Burgundy",
+        "canonical": "#722028",
+        "tonalRamp": ["#260A0D", "#46131A", "#722028", "#9E3A45", "#C96570", "#E49AA2", "#F4CDD1", "#FBECEF"]
+      },
+      "lycious-ivory": {
+        "role": "neutral",
+        "displayName": "Lycious Ivory",
+        "canonical": "#FAF8F4",
+        "tonalRamp": ["#282623", "#494641", "#6D6861", "#918B82", "#B5AEA4", "#D5CFC7", "#EEEAE4", "#FAF8F4"]
+      },
+      "petal-blush": {
+        "role": "secondary",
+        "displayName": "Petal Blush",
+        "canonical": "#E8B4B8",
+        "tonalRamp": ["#331D20", "#5A3439", "#824E55", "#A96F76", "#C99197", "#E8B4B8", "#F3D5D8", "#FBEDEF"]
+      },
+      "lychee-terracotta": {
+        "role": "secondary",
+        "displayName": "Lychee Terracotta",
+        "canonical": "#C88870",
+        "tonalRamp": ["#2E1B15", "#543027", "#7A4939", "#A26650", "#C88870", "#DEAD9B", "#EFD2C7", "#FAEEE9"]
+      },
+      "deep-cocoa": {
+        "role": "neutral",
+        "displayName": "Deep Cocoa",
+        "canonical": "#3D1A13",
+        "tonalRamp": ["#1F0D09", "#3D1A13", "#633329", "#895247", "#AE776C", "#CDA098", "#E7CBC6", "#F8EEEC"]
+      },
+      "soft-gold": {
+        "role": "tertiary",
+        "displayName": "Soft Gold",
+        "canonical": "#C8A96E",
+        "tonalRamp": ["#2C2414", "#514326", "#756338", "#9B844E", "#C8A96E", "#DDC491", "#EFE0BB", "#FAF3E3"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Editorial Display", "purpose": "Largest brand and hero moments." },
+      "headline": { "displayName": "Editorial Headline", "purpose": "Section titles and expressive product statements." },
+      "body": { "displayName": "Modern Body", "purpose": "Readable storytelling, facts, and supporting copy." },
+      "label": { "displayName": "Interface Label", "purpose": "Controls, metadata, and compact navigation." }
+    },
+    "shadows": [
+      { "name": "quiet-lift", "value": "0 2px 8px rgba(61, 26, 19, 0.06)", "purpose": "Sticky navigation and restrained hover feedback." },
+      { "name": "card-lift", "value": "0 8px 24px rgba(61, 26, 19, 0.1)", "purpose": "Interactive cards and focused containers." },
+      { "name": "feature-lift", "value": "0 16px 48px rgba(61, 26, 19, 0.14)", "purpose": "Hero media, product staging, and the order panel." },
+      { "name": "fruit-glow", "value": "0 0 40px rgba(111, 27, 35, 0.12)", "purpose": "Diffuse atmosphere behind signature product imagery." }
+    ],
+    "motion": [
+      { "name": "ease-out", "value": "cubic-bezier(0.25, 0.46, 0.45, 0.94)", "purpose": "Default tactile state and reveal motion." },
+      { "name": "ease-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Expressive icon, underline, and menu transitions." }
+    ],
+    "breakpoints": [
+      { "name": "compact", "value": "480px" },
+      { "name": "mobile", "value": "767px" },
+      { "name": "navigation", "value": "960px" },
+      { "name": "tablet", "value": "1024px" },
+      { "name": "wide-navigation", "value": "1100px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The focused burgundy action for order and primary conversion moments.",
+      "html": "<button class=\"ds-btn-primary\">REQUEST AN ORDER</button>",
+      "css": ".ds-btn-primary { display:inline-flex; align-items:center; padding:14px 36px; border:0; border-radius:50px; background:var(--lycious_burgundy); color:var(--lycious_ivory); font:600 .9375rem/1.5 var(--font-body); cursor:pointer; box-shadow:0 8px 25px rgba(122,33,46,.35); transition:all .3s var(--ease-out); } .ds-btn-primary:hover { background:var(--lycious_burgundy-hover); transform:translateY(-3px); box-shadow:0 12px 35px rgba(122,33,46,.45); } .ds-btn-primary:focus-visible { outline:3px solid var(--gold); outline-offset:4px; } .ds-btn-primary:active { transform:translateY(-1px); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "A quiet outlined action that supports the primary burgundy button.",
+      "html": "<button class=\"ds-btn-secondary\">DISCOVER OUR DRINK</button>",
+      "css": ".ds-btn-secondary { display:inline-flex; align-items:center; padding:12px 34px; border:2px solid var(--pink-400); border-radius:50px; background:transparent; color:var(--pink-700); font:600 .9375rem/1.5 var(--font-body); cursor:pointer; transition:all .3s var(--ease-out); } .ds-btn-secondary:hover { background:var(--pink-100); border-color:var(--pink-600); transform:translateY(-2px); } .ds-btn-secondary:focus-visible { outline:3px solid var(--gold); outline-offset:4px; } .ds-btn-secondary:active { transform:translateY(0); }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "A warm, softly rounded field for order and contact details.",
+      "html": "<label class=\"ds-field-label\">NAME<input class=\"ds-field\" placeholder=\"Your name\"></label>",
+      "css": ".ds-field-label { display:grid; gap:6px; color:var(--pink-800); font:600 .875rem/1.5 var(--font-body); } .ds-field { min-height:48px; padding:12px 14px; border:1px solid var(--cream-dark); border-radius:14px; background:#fff; color:var(--pink-900); font:400 .9375rem/1.5 var(--font-body); outline:none; transition:border-color .25s ease, box-shadow .25s ease; } .ds-field:hover { border-color:var(--pink-300); } .ds-field:focus { border-color:var(--lycious_burgundy); box-shadow:0 0 0 3px rgba(111,27,35,.1); } .ds-field:focus-visible { outline:3px solid var(--gold); outline-offset:4px; }"
+    },
+    {
+      "name": "Value Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "A calm warm-white card that lifts gently to reveal interactivity.",
+      "html": "<article class=\"ds-value-card\"><span class=\"ds-value-icon\">✦</span><h3>Premium Quality</h3><p>Every element is crafted with care and attention to detail.</p></article>",
+      "css": ".ds-value-card { max-width:320px; padding:32px; border:1px solid var(--cream-dark); border-radius:16px; background:var(--warm-white); color:var(--pink-800); font:400 .9375rem/1.75 var(--font-body); transition:all .4s var(--ease-out); } .ds-value-card h3 { margin:16px 0 8px; color:var(--lycious_burgundy); font:600 1.375rem/1.15 var(--font-heading); } .ds-value-card p { margin:0; } .ds-value-icon { display:grid; place-items:center; width:72px; height:72px; border-radius:16px; background:linear-gradient(135deg,var(--cream),var(--cream-dark)); color:var(--lycious_burgundy); transition:transform .3s var(--ease-expo); } .ds-value-card:hover { transform:translateY(-8px); border-color:var(--blush); box-shadow:var(--shadow-lg); } .ds-value-card:hover .ds-value-icon { transform:scale(1.1) rotate(5deg); } .ds-value-card:focus-within { outline:3px solid var(--gold); outline-offset:4px; }"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "description": "Compact burgundy navigation with a restrained growing underline.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">OUR STORY</a>",
+      "css": ".ds-nav-link { position:relative; display:inline-block; padding:4px 0; color:var(--lycious_burgundy); font:500 .875rem/1.5 var(--font-body); letter-spacing:.5px; text-decoration:none; } .ds-nav-link::after { content:''; position:absolute; left:0; bottom:0; width:100%; height:2px; border-radius:2px; background:var(--lycious_burgundy); transform:scaleX(0); transform-origin:left; transition:transform .3s var(--ease-expo); } .ds-nav-link:hover { color:var(--lycious_burgundy-hover); } .ds-nav-link:hover::after, .ds-nav-link:focus-visible::after { transform:scaleX(1); } .ds-nav-link:focus-visible { outline:3px solid var(--gold); outline-offset:4px; }"
+    },
+    {
+      "name": "Language Toggle",
+      "kind": "custom",
+      "description": "A translucent ivory pill that keeps bilingual access visible but secondary.",
+      "html": "<button class=\"ds-lang-toggle\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"9\"/><path d=\"M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18\"/></svg><span>EN</span></button>",
+      "css": ".ds-lang-toggle { display:inline-flex; align-items:center; gap:6px; min-height:44px; padding:8px 14px; border:1px solid var(--blush); border-radius:50px; background:rgba(253,247,242,.7); color:var(--lycious_burgundy); font:600 .8125rem/1.5 var(--font-body); letter-spacing:1px; cursor:pointer; backdrop-filter:blur(8px); transition:all .3s var(--ease-out); } .ds-lang-toggle svg { width:16px; height:16px; fill:none; stroke:currentColor; stroke-width:2; transition:transform .3s var(--ease-expo); } .ds-lang-toggle:hover { background:rgba(253,247,242,.95); transform:translateY(-1px); box-shadow:var(--shadow-sm); } .ds-lang-toggle:hover svg { transform:scale(1.15); } .ds-lang-toggle:focus-visible { outline:3px solid var(--gold); outline-offset:4px; } .ds-lang-toggle:active { transform:translateY(0); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Lychee Atelier",
+    "overview": "Lycious feels like a small contemporary atelier devoted to one exceptional fruit: warm, refined, tactile, and quietly joyful. Editorial typography gives the brand romance and ceremony, while a clear modern sans serif keeps product facts, navigation, and forms effortless to use. The system favors generous breathing room, fruit-led photography, warm pale surfaces, and burgundy as a concentrated signature. It avoids sterile technology styling, neon color, and generic black-and-gold luxury; premium character comes from care, material warmth, and restraint.",
+    "keyCharacteristics": [
+      "Editorial romance balanced by modern clarity",
+      "Lycious Ivory surfaces with a concentrated burgundy signature",
+      "Soft ambient layering and tactile, confidently rounded controls",
+      "Generous responsive rhythm with focused, factual product storytelling"
+    ],
+    "rules": [
+      { "name": "The Concentrated Burgundy Rule", "body": "Burgundy carries meaning because it is focused on brand signatures, actions, and key moments rather than flooding every surface.", "section": "colors" },
+      { "name": "The Lycious Ivory Rule", "body": "Refer to the main warm pale surface as Lycious Ivory; do not rename it Fresh Cream.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Playfair expresses; Poppins explains. Do not use the display face for dense facts, form controls, or long utility copy.", "section": "typography" },
+      { "name": "The Breathing-Room Rule", "body": "Preserve generous section rhythm while keeping each action visually attached to the content it completes.", "section": "layout" },
+      { "name": "The Ambient-First Rule", "body": "Shadows should feel like soft light in a studio; avoid hard black drop shadows and persistent elevation on every card.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do treat Lycious Ivory as the primary warm pale surface and name it consistently.",
+      "Do pair expressive Playfair moments with practical Poppins copy.",
+      "Do use burgundy to focus attention on the logo, primary actions, and key editorial emphasis.",
+      "Do make responsive layouts feel recomposed, with clear touch targets and readable line lengths.",
+      "Do keep depth warm, diffuse, and tied to hierarchy or interaction."
+    ],
+    "donts": [
+      "Don't introduce neon colors, cold tech gradients, or generic black-and-gold luxury styling.",
+      "Don't fill every card with a shadow or every heading with burgundy.",
+      "Don't use Playfair Display for dense product facts, navigation, or form controls.",
+      "Don't square off tactile controls or mix many unrelated corner radii.",
+      "Don't invent product proof, decorative badges, or visual claims that exceed the evidence on hand."
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "buildPath": "code",
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-color",
+        "value": "rgba(122, 33, 46, 0.3)",
+        "createdAt": "2026-09-03T07:44:02.004Z",
+        "reason": "User confirmed softly layered ambient depth; existing burgundy navigation shadow is an intentional brand-tinted elevation state"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(122, 33, 46, 0.4)",
+        "createdAt": "2026-09-03T07:44:02.079Z",
+        "reason": "User confirmed stronger ambient lift on hover; existing burgundy navigation hover shadow is intentional"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(122, 33, 46, 0.35)",
+        "createdAt": "2026-09-03T07:44:02.150Z",
+        "reason": "User confirmed softly layered ambient depth; existing primary-button burgundy shadow is intentional"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(122, 33, 46, 0.45)",
+        "createdAt": "2026-09-03T07:44:02.222Z",
+        "reason": "User confirmed stronger ambient lift on hover; existing primary-button hover shadow is intentional"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(196, 168, 130, 0.2)",
+        "createdAt": "2026-09-03T07:44:02.293Z",
+        "reason": "User confirmed warm ambient depth; existing wood-toned hero image glow is intentional"
+      },
+      {
+        "rule": "design-system-color",
+        "value": "rgba(199, 91, 122, 0.1)",
+        "createdAt": "2026-09-03T07:44:02.364Z",
+        "reason": "User confirmed warm fruit-led atmosphere; existing translucent blush product glow is intentional"
+      }
+    ]
+  }
+}
