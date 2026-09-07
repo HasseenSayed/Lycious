@@ -131,6 +131,12 @@ ul {
     font-size: 1.15em;
 }
 
+.section-title img {
+    align-items: center;
+    width: fit-content;
+    display: block;
+}
+
 /* --- Reveal Animation Base --- */
 .reveal {
     opacity: 0;
@@ -983,6 +989,10 @@ ul {
     line-height: 1.8;
 }
 
+.stockists-header .section-title .lycious-svg {
+    margin: 0 auto;
+}
+
 .stockists-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1263,6 +1273,12 @@ ul {
 
 .order-status.success {
     color: #2f6b45;
+}
+
+.order-status:disabled {
+    background: var(--pink-50);
+    opacity: 0.6;
+    pointer-events: none;
 }
 
 /* ==========================================

@@ -134,7 +134,7 @@
             <div class="product-header">
                 <span class="section-label reveal" data-i18n="product.label">The Drink</span>
                 <h2 class="section-title reveal reveal-delay-1" data-i18n="product.title" data-i18n-html="true">
-                    <img src="images/lycious.png" class="lycious-svg" alt="Lycious" loading="lazy" decoding="async"> Lychee Drink
+                    <img src="images/logos/lycious.png" class="lycious-svg" alt="Lycious" loading="lazy" decoding="async"> Lychee Drink
                 </h2>
                 <p class="reveal reveal-delay-2" data-i18n="product.subtitle">Full & refreshing in taste — a premium
                     lychee drink like no other.</p>
@@ -246,9 +246,8 @@
     <section class="stockists" id="stockists">
         <div class="container">
             <div class="stockists-header">
-                <span class="section-label reveal" data-i18n="stockists.label">Where to Buy</span>
-                <h2 class="section-title reveal reveal-delay-1" data-i18n="stockists.title" data-i18n-html="true">
-                    <em>Lycious</em> is available here
+                <h2 class="section-title reveal reveal-delay-1">
+                    <img src="images/logos/lycious.png" class="lycious-svg" alt="Lycious" loading="lazy" decoding="async"> <span data-i18n="stockists.title_suffix">is available here</span>
                 </h2>
                 <p class="reveal reveal-delay-2" data-i18n="stockists.subtitle">
                     Order directly from us, or find Lycious at the shops listed below.
@@ -275,6 +274,17 @@
                     <address>
                         <span>President Kennedyplein 5</span><br>
                         <span>1945 SG Beverwijk</span>
+                    </address>
+                </article>
+
+                <article class="stockist-card reveal reveal-delay-2">
+                    <div class="stockist-logo-placeholder stockist-logo-placeholder--initials" aria-hidden="true">
+                        <img src="images/shops/damaroze.png" alt="Dama Roze logo" loading="lazy" decoding="async">
+                    </div>
+                    <h3>Dama Roze</h3>
+                    <address>
+                        <span>Breestraat 110</span><br>
+                        <span>1941 CV Beverwijk</span>
                     </address>
                 </article>
 
@@ -444,7 +454,7 @@
                         <p data-i18n="order.summary_note">No payment is taken until your order is confirmed.</p>
                     </div>
 
-                    <button class="btn btn-primary order-submit" type="submit" data-i18n="order.submit">
+                    <button disabled class="btn btn-primary order-submit" type="submit" data-i18n="order.submit">
                         Place Order
                     </button>
                     <p class="order-status" id="orderStatus" role="status" aria-live="polite"></p>
