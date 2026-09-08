@@ -1,12 +1,11 @@
 const viewer = document.querySelector('[data-bottle-viewer]');
 
 if (viewer) {
-  const interactiveViewerQuery = window.matchMedia('(min-width: 768px) and (hover: hover) and (pointer: fine)');
   const viewerStatus = viewer.querySelector('[data-model-status]');
   let viewerStarted = false;
 
   const syncViewerMode = () => {
-    const canUseInteractiveViewer = interactiveViewerQuery.matches && !navigator.connection?.saveData;
+    const canUseInteractiveViewer = canRenderBottleViewer();
     viewer.classList.toggle('is-static', !canUseInteractiveViewer);
     viewerStatus?.setAttribute('aria-hidden', String(!canUseInteractiveViewer));
 
@@ -20,7 +19,19 @@ if (viewer) {
   };
 
   syncViewerMode();
-  interactiveViewerQuery.addEventListener('change', syncViewerMode);
+}
+
+function canRenderBottleViewer() {
+  if (navigator.connection?.saveData) return false;
+
+  const canvas = document.createElement('canvas');
+  const contextOptions = { failIfMajorPerformanceCaveat: true };
+
+  return Boolean(
+    canvas.getContext('webgl2', contextOptions) ||
+    canvas.getContext('webgl', contextOptions) ||
+    canvas.getContext('experimental-webgl', contextOptions)
+  );
 }
 
 async function initBottleViewer(viewerElement) {

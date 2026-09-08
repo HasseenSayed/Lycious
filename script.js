@@ -29,7 +29,7 @@ const translations = {
     'hero.subtitle': "Lychee, like you've rarely tasted.",
     'hero.tagline': 'We missed a drink that does justice to the real taste of lychee. So we made it ourselves. Subtly sweet. Fresh. Delicious.',
     'hero.cta_primary': 'Discover Our Drink',
-    'hero.cta_order': 'Request an Order',
+    'hero.cta_contact': 'Get in Touch',
     'hero.cta_secondary': 'Our Story',
 
     // About
@@ -144,7 +144,7 @@ const translations = {
     'hero.subtitle': 'Lychee, zoals je \'m zelden proeft.',
     'hero.tagline': 'We misten een drankje dat recht doet aan de echte smaak van lychee. Dus maakten we het zelf. Subtiel zoet. Fris. Heerlijk.',
     'hero.cta_primary': 'Ontdek Ons Drankje',
-    'hero.cta_order': 'Bestelling Aanvragen',
+    'hero.cta_contact': 'Neem contact op',
     'hero.cta_secondary': 'Ons Verhaal',
 
     // About
