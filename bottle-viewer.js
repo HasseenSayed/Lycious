@@ -46,7 +46,7 @@ async function initBottleViewer(viewerElement) {
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
-  camera.position.set(0, 0.35, 4.8);
+  camera.position.set(0, 0, 4.8);
 
   const patternImage = await loadImage('images/pattern-bg.png').catch(() => null);
   const backdrop = createProductBackdrop(THREE, viewerElement, patternImage);
@@ -63,13 +63,13 @@ async function initBottleViewer(viewerElement) {
   renderer.outputColorSpace = THREE.SRGBColorSpace;
 
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1;
+  renderer.toneMappingExposure = 0.85;
 
   const pmremGenerator = new THREE.PMREMGenerator(renderer);
-  const environment = pmremGenerator.fromScene(
-    new RoomEnvironment(),
-    0.04
-  ).texture;
+  const studioEnvironment = new RoomEnvironment();
+  const environment = pmremGenerator.fromScene(studioEnvironment, 0.04).texture;
+  studioEnvironment.dispose();
+  pmremGenerator.dispose();
 
   scene.environment = environment;
 
@@ -80,21 +80,28 @@ async function initBottleViewer(viewerElement) {
   controls.enablePan = false;
   controls.minDistance = 3;
   controls.maxDistance = 6.5;
-  controls.target.set(0, 0.1, 0);
+  controls.target.set(0, 0, 0);
   controls.autoRotate = !prefersReducedMotion.matches;
   controls.autoRotateSpeed = 0.9;
 
-  scene.add(
-    new THREE.HemisphereLight(0xfff8ef, 0x6f3428, 0.4)
-  );
+  // The environment supplies broad glass reflections; these lights provide
+  // balanced illumination for the printed label and opaque bottle contents.
+  const ambientLight = new THREE.HemisphereLight(0xfffaf5, 0xd8cbc1, 0.35);
+  ambientLight.name = 'Studio ambient';
 
-  const keyLight = new THREE.DirectionalLight(0xffffff, 0.9);
-  keyLight.position.set(3.5, 5, 4);
-  scene.add(keyLight);
+  const keyLight = new THREE.DirectionalLight(0xffffff, 0.8);
+  keyLight.name = 'Studio key';
+  keyLight.position.set(3, 2, 4);
 
-  const rimLight = new THREE.DirectionalLight(0xf5dce0, 0.3);
-  rimLight.position.set(-3, 2.6, -2);
-  scene.add(rimLight);
+  const fillLight = new THREE.DirectionalLight(0xfff5ed, 0.45);
+  fillLight.name = 'Studio fill';
+  fillLight.position.set(-3, -0.5, 4);
+
+  const rimLight = new THREE.DirectionalLight(0xffffff, 0.2);
+  rimLight.name = 'Studio rim';
+  rimLight.position.set(-2, 2, -3);
+
+  scene.add(ambientLight, keyLight, fillLight, rimLight);
 
   const loader = new GLTFLoader();
   const gltf = await new Promise((resolve, reject) => {
@@ -103,7 +110,7 @@ async function initBottleViewer(viewerElement) {
 
   const model = gltf.scene;
 
-  configureBottleMaterials(THREE, model);
+  configureBottleMaterials(model);
   normalizeModel(THREE, model);
 
   scene.add(model);
@@ -157,9 +164,25 @@ function normalizeModel(THREE, model) {
   model.position.sub(scaledCenter);
 }
 
-function configureBottleMaterials(THREE, model) {
+function configureBottleMaterials(model) {
   model.traverse(child => {
     if (!child.isMesh) return;
+
+    // This cylindrical label was exported with rim-averaged normals, which
+    // make its bottom face the floor and produce a false vertical shadow.
+    if (child.name.toLowerCase().includes('label')) {
+      child.geometry = child.geometry.clone();
+      const normals = child.geometry.getAttribute('normal');
+      if (normals) {
+        for (let i = 0; i < normals.count; i++) {
+          const x = normals.getX(i);
+          const z = normals.getZ(i);
+          const length = Math.hypot(x, z);
+          if (length > 0.001) normals.setXYZ(i, x / length, 0, z / length);
+        }
+        normals.needsUpdate = true;
+      }
+    }
 
     const materials = Array.isArray(child.material)
       ? child.material
@@ -168,25 +191,25 @@ function configureBottleMaterials(THREE, model) {
     materials.forEach(material => {
       if (!material) return;
 
-      if (material.name === 'Clear_Glass_WEB') {
+      const name = `${child.name} ${material.name}`.toLowerCase();
+
+      // Balance image-based lighting with the studio lights. In Three r160
+      // environment intensity is controlled on each material.
+      if ('envMapIntensity' in material) material.envMapIntensity = 0.65;
+
+      if (name.includes('label')) {
+        material.roughness = 0.65;
+        material.clearcoat = 0;
+        material.needsUpdate = true;
+      }
+
+      if (name.includes('bottle') || name.includes('glass')) {
+        material.envMapIntensity = 0.8;
 
         if (material.normalMap) {
           material.normalScale.set(0.1, 0.1);
         }
 
-        material.envMapIntensity = 1.25;
-        material.needsUpdate = true;
-      }
-
-      if (material.name === 'Lycious Lychee WEB') {
-      // Work around nested transmission issue only
-        material.transmission = 0;
-        material.needsUpdate = true;
-        material.side = THREE.FrontSide;
-        material.needsUpdate = true;
-      }
-      if (material.name === 'Label') {
-        material.side = THREE.FrontSide;
         material.needsUpdate = true;
       }
     });
