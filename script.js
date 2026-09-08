@@ -77,7 +77,7 @@ const translations = {
 
     // Stockists
     'stockists.label': 'Where to Buy',
-    'stockists.title': '<em>Lycious</em> is available here',
+    'stockists.title_suffix': 'is available here',
     'stockists.subtitle': 'Order directly from us, or find Lycious at the shops listed below.',
     'stockists.badge_direct': 'Direct from Lycious',
     'stockists.direct_title': 'The Lycious Company',
@@ -104,8 +104,7 @@ const translations = {
     'order.remember': 'Remember my details on this device',
     'order.summary_label': 'Order request',
     'order.summary_note': 'No payment is taken until your order is confirmed.',
-    'order.submit': 'Request Order',
-    'order.clear': 'Clear form',
+    'order.submit': 'Coming Soon!',
     'order.bottle_single': 'bottle',
     'order.bottle_plural': 'bottles',
     'order.sending': 'Preparing your order request...',
@@ -193,7 +192,7 @@ const translations = {
 
     // Stockists
     'stockists.label': 'Verkrijgbaar bij',
-    'stockists.title': '<em>Lycious</em> is hier verkrijgbaar',
+    'stockists.title_suffix': 'is hier verkrijgbaar',
     'stockists.subtitle': 'Bestel direct bij ons, of vind Lycious bij de verkooppunten hieronder.',
     'stockists.badge_direct': 'Direct bij Lycious',
     'stockists.direct_title': 'The Lycious Company',
@@ -220,8 +219,7 @@ const translations = {
     'order.remember': 'Onthoud mijn gegevens op dit apparaat',
     'order.summary_label': 'Bestelaanvraag',
     'order.summary_note': 'Er wordt pas betaald nadat je bestelling is bevestigd.',
-    'order.submit': 'Bestelling Aanvragen',
-    'order.clear': 'Formulier wissen',
+    'order.submit': 'Binnenkort beschikbaar!',
     'order.bottle_single': 'flesje',
     'order.bottle_plural': 'flesjes',
     'order.sending': 'Je bestelaanvraag wordt voorbereid...',
@@ -312,13 +310,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // --- Responsive Hero Video ---
   const heroVideo = document.querySelector('.hero-video');
-  const desktopVideoQuery = window.matchMedia('(min-width: 1025px) and (hover: hover)');
   const reducedMotionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   function syncHeroVideo() {
     if (!heroVideo) return;
 
-    const shouldLoadVideo = desktopVideoQuery.matches && !reducedMotionQuery.matches && !navigator.connection?.saveData;
+    const shouldLoadVideo = !reducedMotionQuery.matches && !navigator.connection?.saveData;
     const existingSource = heroVideo.querySelector('source');
 
     if (shouldLoadVideo && !existingSource) {
@@ -340,7 +337,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   syncHeroVideo();
-  desktopVideoQuery.addEventListener('change', syncHeroVideo);
   reducedMotionQuery.addEventListener('change', syncHeroVideo);
 
 
